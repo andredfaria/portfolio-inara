@@ -1,17 +1,20 @@
 import React from "react";
 import "./_aboutMe.scss";
-import aboutImg from "../../../assets/images/about.svg";
-import contact from "../../../assets/images/contact.png";
-import { Link } from "react-router-dom";
-import * as routes from "../../../routePaths";
+
+const skills = [
+  { name: "Pesquisa  ", level: 80 },
+  { name: "Escrita", level: 90 },
+  { name: "Entrevista", level: 98 },
+  { name: "Edição ", level: 70 },
+];
 
 const AboutMe = (props) => (
   <section id="aboutMe" className="aboutMe container-fluid section-spacing">
     <div className="container">
       <div className="row">
-        <div className="col-12 col-lg-5 about-text-col">
+        <div className="col-12 col-lg-6 about-text-col">
           <div className="section-heading">
-            <h4 className="about-me-heading">About Me</h4>
+            <h4 className="about-me-heading">Sobre mim</h4>
           </div>
           <div className="about-text">
             <p className="description" style={{ color: "#969696" }}>
@@ -24,35 +27,25 @@ const AboutMe = (props) => (
               <br />
             </p>
           </div>
-
-          <div className="contact-me-wrapper">
-            <a
-              href="http://wa.me/5535998084624"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              <button className="primary-btn">Entre em contrato</button>
-            </a>
-            {/* <a
-              href="https://www.notion.so/developerayo/Shodipo-Ayomide-Press-Kit-Presenter-Terms-dbc63437aa6e4bd1882dfb4de5223a10"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="primary-btn" style={{ marginLeft: "15px" }}>
-                <img src={contact} alt="contact" />
-                Press Kit
-              </button>
-            </a> */}
-          </div>
         </div>
-        <div className="col-12 col-lg-7 about-img-col">
-          <img
-            className="img-fluid"
-            src={aboutImg}
-            alt="about-me"
-            style={{ width: "500px" }}
-          />
+        <div className="col-12 col-lg-6 px-4 about-text-col">
+          <div className="section-heading">
+            <h4 className="about-me-heading">Competências</h4>
+          </div>
+          <div className="skills-rating">
+            {skills.map((skill, index) => (
+              <div key={index} className="skill">
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-bar">
+                  <div
+                    className="skill-bar-fill"
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
+                <div className="skill-percentage">{skill.level}%</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -135,31 +135,20 @@ const Header = props => {
             </li>
             <li className="nav-item">
               <Link
-                to={`${routes.homepage}#aboutMe`}
+                to={`${routes.homepage}curriculo`}
                 className="nav-link"
                 style={{ color: "#969696" }}
               >
-                About
+                Curriculo
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to={`${routes.homepage}#blogs`}
+                to={`${routes.homepage}televisao`}
                 className="nav-link"
                 style={{ color: "#969696" }}
               >
                 TV
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                target="_blank"
-                to={"//speaking.shodipoayomide.com"}
-                className="nav-link"
-                aria-disabled="true"
-                style={{ color: "#969696" }}
-              >
-                Escritos
               </Link>
             </li>
             <li className="nav-item">
@@ -181,19 +170,6 @@ const Header = props => {
           </ul>
         </div>
       </nav>
-      {/* {show && (
-        <img
-          className="d-block d-lg-none"
-          src={socials1}
-          alt="socials"
-          style={{
-            width: "63%",
-            position: "absolute",
-            bottom: "20px",
-            left: "20px"
-          }}
-        />
-      )} */}
     </div>
   );
 };

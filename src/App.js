@@ -6,6 +6,7 @@ import "./App.css";
 import * as routes from "./routePaths";
 import Homepage from "./components/Homepage/Homepage";
 import ResumePage from "./components/ResumePage/ResumePage";
+import TV from "./components/TV/TVPage";
 
 function App(props) {
   const { pathname, hash } = useLocation();
@@ -32,8 +33,9 @@ function App(props) {
   return (
     <div className="App" id="home">
       <Routes>
-        <Route path={routes.homepage} element={<Homepage />} />
-        <Route path={routes.resume} element={<ResumePage />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="curriculo" element={<ResumePage />} />
+        <Route path="televisao" element={<TV />} />
       </Routes>
     </div>
   );

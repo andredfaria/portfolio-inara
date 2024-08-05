@@ -136,3 +136,39 @@ $backgrounds: (
     margin-left: $social-media-link-space-between;
   }
 }
+
+.skills-rating {
+  margin-top: 20px;
+
+  .skill {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    .skill-name {
+      width: 100px;
+      font-weight: bold;
+    }
+
+    .skill-bar {
+      flex: 1;
+      background: #e0e0e0;
+      border-radius: 5px;
+      position: relative;
+      height: 10px;
+      margin: 0 10px;
+
+      .skill-bar-fill {
+        background: #8247E5;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .skill-percentage {
+      min-width: 40px;
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+}

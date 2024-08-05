@@ -4,9 +4,6 @@ import inara from "../../../assets/images/inara.jpg";
 import dots from "../../../assets/images/dots.png";
 import line from "../../../assets/images/introlines.png";
 import dotsSquare from "../../../assets/images/dots-square.png";
-// import socials from "../../../assets/images/socials.png";
-// import socials1 from "../../../assets/images/socials-1.png";
-// import contact from "../../../assets/images/contact.png";
 import brackets from "../../../assets/images/brackets.png";
 import file from "../../../assets/images/file.png";
 import zigzag from "../../../assets/images/zigzag.png";
@@ -38,9 +35,6 @@ const Introduction = (props) => (
         </div>
       </div>
       <div className="col-12 col-lg-6 intro-text-col">
-        {/* <div className="socials-img d-none d-lg-block">
-          <img src={socials} alt="socials" style={{ width: "12px" }} />
-        </div> */}
         <div className="intro-text-box">
           <h1>Inara Angra</h1>
           <p className="sub-text">

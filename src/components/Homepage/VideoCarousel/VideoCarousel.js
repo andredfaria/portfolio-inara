@@ -1,17 +1,12 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./VideoCarousel.css"; // Adicione um arquivo CSS para estilos personalizados
+import "./VideoCarousel.scss";
 
-const VideoCarousel = () => {
-  const videos = [
-    { id: "1", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { id: "2", url: "https://www.youtube.com/embed/9bZkp7q19f0" },
-    { id: "3", url: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
-  ];
-
+const VideoCarousel = ({ videos, title }) => {
   return (
     <div className="video-carousel-container">
+      <h2 className="carousel-title">{title}</h2>
       <Carousel
         showThumbs={false}
         showStatus={false}
