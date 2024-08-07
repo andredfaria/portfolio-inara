@@ -1,14 +1,9 @@
 import React, { Fragment, useEffect } from "react";
-import Header from "../common/Header";
-import Introduction from "./Introduction/Introduction";
-import AboutMe from "./AboutMe/AboutMe";
-import VideoCarousel from "./VideoCarousel/VideoCarousel";
 import Footer from "../common/Footer";
-// import Companies from "./Companies/Companies";
-// import Projects from "./Projects/Projects";
-// import MyBlogs from "./MyBlogs/MyBlogs";
-// import ContactUs from "./ContactUs/ContactUs";
-// import Testimonials from "./Testimonials/Testimonials";
+import Header from "../common/Header";
+import AboutMe from "./AboutMe/AboutMe";
+import Introduction from "./Introduction/Introduction";
+import VideoCarousel from "./VideoCarousel/VideoCarousel";
 
 const Homepage = props => {
   const videos = [
@@ -26,11 +21,6 @@ const Homepage = props => {
       <Introduction />
       <AboutMe />
       <VideoCarousel videos={videos} title={"Destaques"} />
-      {/* <Companies /> */}
-      {/* <Projects /> */}
-      {/* <MyBlogs /> */}
-      {/* <Testimonials /> */}
-      {/* <ContactUs /> */}
       <Footer />
     </Fragment>
   );

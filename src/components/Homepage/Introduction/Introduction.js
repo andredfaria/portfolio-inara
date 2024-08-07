@@ -1,12 +1,12 @@
 import React from "react";
-import "./_introduction.scss";
-import inara from "../../../assets/images/inara.jpg"; 
-import dots from "../../../assets/images/dots.png";
-import line from "../../../assets/images/introlines.png";
 import dotsSquare from "../../../assets/images/dots-square.png";
-import brackets from "../../../assets/images/brackets.png";
-import file from "../../../assets/images/file.png";
+import dots from "../../../assets/images/dots.png";
+import globe from "../../../assets/images/globe-i.png";
+import inara from "../../../assets/images/inara.jpg";
+import line from "../../../assets/images/introlines.png";
+import tablet from "../../../assets/images/tablet.png";
 import zigzag from "../../../assets/images/zigzag.png";
+import "./_introduction.scss";
 
 const Introduction = (props) => (
   <section id="intro" className="intro container section-spacing">
@@ -25,10 +25,10 @@ const Introduction = (props) => (
           />
           <img
             className="brackets d-none d-lg-block"
-            src={brackets}
-            alt="brackets"
+            src={tablet}
+            alt="tablet"
           />
-          <img className="file d-none d-lg-block" src={file} alt="file" />
+          <img className="file d-none d-lg-block" src={globe} alt="file" />
         </div>
         <div>
           <img className="dashed-box" src={line} alt="line" />
