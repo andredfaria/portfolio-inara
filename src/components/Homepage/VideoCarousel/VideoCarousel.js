@@ -3,9 +3,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./VideoCarousel.scss";
 
-const VideoCarousel = ({ videos, title }) => {
+const VideoCarousel = ({ videos, title, width = "80%", height = "80%" }) => {
   return (
-    <div className="video-carousel-container">
+    <div className="video-carousel-container" style={{ width }}>
       <h2 className="carousel-title">{title}</h2>
       <Carousel
         showThumbs={false}
@@ -26,6 +26,7 @@ const VideoCarousel = ({ videos, title }) => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              style={{ height }}
             ></iframe>
           </div>
         ))}

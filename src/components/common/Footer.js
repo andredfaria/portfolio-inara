@@ -1,14 +1,8 @@
-import React, { Fragment, useEffect } from "react";
 import $ from "jquery";
+import React, { Fragment, useEffect } from "react";
 import "./_footer.scss";
-import dev from "../../assets/images/dev.png";
-import github from "../../assets/images/github.png";
-import oo from "../../assets/images/oo.png";
-import linked from "../../assets/images/linked.png";
-import twitter from "../../assets/images/twitter.png";
 
 const Footer = props => {
-  let icons = [twitter, github, oo, linked, dev];
 
   useEffect(() => {
     $(window).scroll(function() {
@@ -34,19 +28,10 @@ const Footer = props => {
         <div className="row ml-0 mr-0">
           <div
             className="col-12 col-lg-6 pl-0 footer-text"
-            style={{ color: "#c2c2c2" }}
+            style={{ color: "#000000", fontweight: "bold" }}
           >
             Desenvolvido por André de Faria &copy; 2024
           </div>
-          {/* <div className="col-12 col-lg-6 pr-0">
-            <ul className="footer-list">
-              {icons.map((icon, i) => (
-                <li key={i}>
-                  <img src={icon} alt={`icon-${i}`} />
-                </li>
-              ))}
-            </ul>
-          </div> */}
         </div>
       </div>
       <div id="back2Top" title="Back to top" href="#">

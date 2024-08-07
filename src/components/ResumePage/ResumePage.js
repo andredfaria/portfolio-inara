@@ -2,12 +2,13 @@ import React, { Fragment, useEffect } from "react";
 import art from "../../assets/images/art.png";
 import calender from "../../assets/images/calender.png";
 import download from "../../assets/images/download.png";
-import globe from "../../assets/images/globe.png";
 import inbox from "../../assets/images/inbox.png";
+import instagram from "../../assets/images/instagram.png";
+import x from "../../assets/images/x.png";
+import linkedin from "../../assets/images/linkedin.png";
 import location from "../../assets/images/location.png";
 import ellipse from "../../assets/images/resume-ellipse.png";
 import school from "../../assets/images/school.png";
-import social2 from "../../assets/images/social2.png";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./_resume.scss";
@@ -54,20 +55,12 @@ const ResumePage = props => {
                           alt="download"
                         />
                         <a
-                          href="./inara.pdf"
+                          href="https://inaraangra.vercel.app/inara.pdf"
                           style={{ textdecoration: "none", color: "white" }}
                         >
                           Download CV
                         </a>
                       </button>
-                      <a
-                        href="https://twitter.com/inara"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ textdecoration: "none" }}
-                      >
-                        <img src={globe} alt="globe" />
-                      </a>
                     </li>
                   </ul>
                 </div>
@@ -92,7 +85,7 @@ const ResumePage = props => {
                       <li>
                         <a href="#home" onClick={(ev) => ev.preventDefault()}>
                           {" "}
-                          <img src={social2} alt="" />{" "}
+                          <img src={linkedin} alt="icon-linkedin" />{" "}
                           <span>
                             <a
                               href="https://www.linkedin.com/in/inara-a-049567157/"
@@ -108,10 +101,26 @@ const ResumePage = props => {
                       <li>
                         <a href="#home" onClick={(ev) => ev.preventDefault()}>
                           {" "}
-                          <img src="instagram" alt="" />{" "}
+                          <img src={instagram} alt="icon-instagram" />{" "}
                           <span>
                             <a
                               href="https://www.instagram.com/inaraangra/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: "none" }}
+                            >
+                              @inaraangra
+                            </a>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#home" onClick={(ev) => ev.preventDefault()}>
+                          {" "}
+                          <img src={x} alt="icon-instagram" />{" "}
+                          <span>
+                            <a
+                              href="https://www.x.com/inaraangra/"
                               target="_blank"
                               rel="noopener noreferrer"
                               style={{ textDecoration: "none" }}
@@ -210,7 +219,7 @@ const ResumePage = props => {
                   <div className="experience">
                     <div className="experience-title">
                       <span className="experience-text">MDM</span>
-                      <span className="remote">Nigeria</span>
+                      <span className="remote">Remoto</span>
                     </div>
                     <div className="experience-detail">
                       <div className="experience-detail-item">
@@ -228,11 +237,8 @@ const ResumePage = props => {
                     </div>
                   </div>
 
-                  <center>
-                    "Uma frase que você goste muito bem culta"
-                  </center>
+                  <center>"Uma frase que você goste muito bem culta"</center>
                 </div>
-
               </div>
             </div>
           </div>
