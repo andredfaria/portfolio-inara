@@ -51,7 +51,7 @@ const Introduction = (props) => (
             apaixonada por turismo e cultura.
           </p>
           <a
-            href="https://www.linkedin.com/in/inara-a-049567157/"
+            href="https://www.linkedin.com/in/inaraangra/"
             target="_blank"
             rel="noopener noreferrer"
           >

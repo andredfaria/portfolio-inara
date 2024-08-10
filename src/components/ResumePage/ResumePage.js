@@ -49,7 +49,9 @@ const ResumePage = props => {
                     </li>
                     <li>
                       <img src={inbox} alt="" />
-                      <a href="https://wa.me/5535998084624/">(35) 9 9808-4624</a>
+                      <a href="https://wa.me/5535998084624/">
+                        (35) 9 9808-4624
+                      </a>
                     </li>
                     <li>
                       <button className="download">
@@ -115,7 +117,7 @@ const ResumePage = props => {
                           <img src={linkedin} alt="icon-linkedin" />{" "}
                           <span>
                             <a
-                              href="https://www.linkedin.com/in/inara-a-049567157/"
+                              href="https://www.linkedin.com/in/inaraangra/"
                               target="_blank"
                               rel="noopener noreferrer"
                               style={{ textDecoration: "none" }}
@@ -152,21 +154,21 @@ const ResumePage = props => {
               </div>
               <div className="col-12 col-lg-7 resume-col">
                 <div className="summary">
-                  <h5 className="resume-heading">Resuimo Profissional</h5>
+                  <h5 className="resume-heading">Resumo Profissional</h5>
                   <p className="summary-text">
-                    Possuo experiência como copywriter na MDM Network, e também
-                    acumulo estágios, incluindo passagens como repórter na TV
-                    Poços, produção de pautas para TV na EPTV Sul de Minas
-                    (afiliada Rede Globo), além de atuação em Assessoria de
-                    Comunicação no Departamento Municipal de Água e Esgoto de
-                    Poços de Caldas, MG (DMAE) e na Industrias Nucleares do
-                    Brasil - INB, em Caldas. Me considero focada e curiosa, sou
-                    apaixonada pelo jornalismo e a arte de conhecer culturas e
-                    contar histórias.
+                    23 anos, jornalista, formada pela UNIFAE - Centro
+                    Universitário das Faculdades Associadas, em São João da Boa
+                    Vista - SP. E buscando expandir horizontes com a segunda
+                    graduação, em Publicidade e Propaganda (EAD). Possuo
+                    experiência como repórter em diversas editorias do
+                    jornalismo, e passagem rápida como copywriter, além de
+                    acumular estágios em Produção de TV, Reportagens e
+                    Assessoria de Comunicação. Me considero focada, curiosa e
+                    adaptável. E sou apaixonada por turismo e cultura.
                   </p>
                 </div>
                 <div className="work-experience-section">
-                  <h5 className="resume-heading">Experiencias proficionais</h5>
+                  <h5 className="resume-heading">Experiências profissionais</h5>
 
                   <div className="experience">
                     <div className="experience-title">
