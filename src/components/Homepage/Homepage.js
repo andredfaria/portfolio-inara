@@ -7,12 +7,13 @@ import VideoCarousel from "./VideoCarousel/VideoCarousel";
 
 const Homepage = props => {
   const videos = [
-    { id: "1", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { id: "2", url: "https://www.youtube.com/embed/9bZkp7q19f0" },
-    { id: "3", url: "https://www.youtube.com/embed/3JZ_D3ELwOQ" },
+    { id: "1", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
+    { id: "2", url: "https://www.youtube.com/embed/V5npXQRuOak" },
+    { id: "3", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
+    { id: "3", url: "https://www.youtube.com/embed/StQBIoAfAzw" },
   ];
 
-  useEffect(() => {
+  https: useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
@@ -20,7 +21,7 @@ const Homepage = props => {
       <Header />
       <Introduction />
       <AboutMe />
-      <VideoCarousel videos={videos} title={"Destaques"} />
+      <VideoCarousel videos={videos}  width="100%" height="100%" title={"Destaques"} />
       <Footer />
     </Fragment>
   );

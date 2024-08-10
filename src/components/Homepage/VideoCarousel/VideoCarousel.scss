@@ -1,13 +1,12 @@
-.intro {
+.video-carousel-container {
   position: relative;
   padding-bottom: 45px;
   // padding-top: 50px;
 
   .square-dots {
-    position: absolute;
-    left: 0;
-    padding-top: 30px;
-    bottom: -50px;
+    // position: absolute;
+    padding-top: 0px;
+    bottom: 0px;
     max-height: 130px;
   }
 }

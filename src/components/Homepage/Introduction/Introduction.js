@@ -41,13 +41,14 @@ const Introduction = (props) => (
             Jornalista | Repórter | Apresentadora | Produtora
           </p>
           <p className="description desc" style={{ color: "#969696" }}>
-            23 anos, com graduação em Comunicação Social com ênfase em
-            Jornalismo, formada pelo Centro Universitário das Faculdades
-            Associadas de Ensino - UNIFAE, em São João da Boa Vista/SP. Buscando
-            expandir horizontes na segunda graduação em Publicidade e Propaganda
-            pela UNICESUMAR. Atualmente, ocupo a posição de repórter do Plantão
-            47, principal jornal da emissora, e apresentadora da Agenda
-            Cultural, na TV Plan, em Poços de Caldas/MG.
+            23 anos, jornalista, formada pela UNIFAE - Centro Universitário das
+            Faculdades Associadas, em São João da Boa Vista - SP. E buscando
+            expandir horizontes com a segunda graduação, em Publicidade e
+            Propaganda (EAD). Possuo experiência como repórter em diversas
+            editorias do jornalismo, e passagem rápida como copywriter, além de
+            acumular estágios em Produção de TV, Reportagens e Assessoria de
+            Comunicação. Me considero focada, curiosa e adaptável. E sou
+            apaixonada por turismo e cultura.
           </p>
           <a
             href="https://www.linkedin.com/in/inara-a-049567157/"

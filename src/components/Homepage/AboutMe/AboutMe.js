@@ -12,23 +12,31 @@ const AboutMe = (props) => (
   <section id="aboutMe" className="aboutMe container-fluid section-spacing">
     <div className="container">
       <div className="row">
-        <div className="col-12 col-lg-6 about-text-col">
+        <div className="col-12 col-lg-12 about-text-col">
           <div className="section-heading">
-            <h4 className="about-me-heading">Sobre mim</h4>
+            <h4 className="about-me-heading">Experiência Profissional</h4>
           </div>
           <div className="about-text">
             <p className="description" style={{ color: "#969696" }}>
-              Possuo experiência como copywriter na MDM Network, e também
-              acumulo estágios, incluindo passagens como repórter na TV Poços,
-              produção de pautas para TV na EPTV Sul de Minas (afiliada Rede
-              Globo), além de atuação em Assessoria de Comunicação no
-              Departamento Municipal de Água e Esgoto de Poços de Caldas (DMAE)
-              e na Industrias Nucleares do Brasil - INB, em Caldas.. <br />{" "}
-              <br />
+              Desde o início da faculdade, busquei o máximo de experiências
+              dentro do jornalismo, o que me permitiu estagiar em diferentes
+              áreas, como assessoria de comunicação e televisão. Ao me formar em
+              Jornalismo, decidi ampliar meus conhecimentos cursando Publicidade
+              e Propaganda, onde aproveitei os contatos adquiridos para estagiar
+              em redes sociais e assessoria de comunicação, dessa vez com foco
+              na publicidade.
+              <br></br>
+              <br></br>
+              Com o passar do tempo, fui convidada a integrar a equipe da TV
+              Plan como repórter, posição que ocupo até hoje. Durante meu
+              primeiro ano na empresa, tive a oportunidade de atuar em diversas
+              funções, como produtora e apresentadora do quadro Agenda Cultural,
+              além de assumir temporariamente o papel de diretora de jornalismo,
+              liderando o fechamento do jornal. <br /> <br />
             </p>
           </div>
         </div>
-        <div className="col-12 col-lg-6 px-4 about-text-col">
+        {/* <div className="col-12 col-lg-6 px-4 about-text-col">
           <div className="section-heading">
             <h4 className="about-me-heading">Competências</h4>
           </div>
@@ -46,7 +54,7 @@ const AboutMe = (props) => (
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   </section>

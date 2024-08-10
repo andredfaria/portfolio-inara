@@ -1,11 +1,17 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
+import dotsSquare from "../../../assets/images/dots-square.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./VideoCarousel.scss";
 
 const VideoCarousel = ({ videos, title, width = "80%", height = "80%" }) => {
   return (
-    <div className="video-carousel-container" style={{ width }}>
+    <div className="mt-5 video-carousel-container" style={{ width }}>
+        <img
+          className="square-dots dots-img d-none d-lg-block float-right lt"
+          src={dotsSquare}
+          alt="dots-sq"
+        />
       <h2 className="carousel-title">{title}</h2>
       <Carousel
         showThumbs={false}

@@ -142,6 +142,8 @@ const Header = props => {
                 Curriculo
               </Link>
             </li>
+
+{/* 
             <li className="nav-item">
               <Link
                 to={`${routes.homepage}televisao`}
@@ -158,7 +160,8 @@ const Header = props => {
               >
                 <button className="primary-btn">Instagram</button>
               </Link>
-            </li>
+            </li> */}
+
             <li className="nav-item d-none d-lg-block">
               <img
                 src={darkTheme ? light : dark}
