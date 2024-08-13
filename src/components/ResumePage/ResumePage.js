@@ -28,7 +28,11 @@ const ResumePage = props => {
               <div className="col-12 col-lg-5 resume-col">
                 <div className="user-personal-info">
                   <div className="profile-image-div">
-                    <img className="img-fluid" src={profile} alt="Perfil de Inara Angra" />
+                    <img
+                      className="img-fluid"
+                      src={profile}
+                      alt="Perfil de Inara Angra"
+                    />
                   </div>
                   <h5 className="resume-heading profile-name">Inara Angra</h5>
                   <p>Jornalista & Repórter</p>
@@ -57,17 +61,6 @@ const ResumePage = props => {
                       <img src={inbox} alt="Telefone" />
                       <a href="https://wa.me/5535998084624/">
                         (35) 9 9808-4624
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="download"
-                        href="https://inaraangra.vercel.app/inara.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={download} alt="Download CV" />
-                        Download CV
                       </a>
                     </li>
                   </ul>
@@ -136,6 +129,23 @@ const ResumePage = props => {
                       >
                         <img src={instagram} alt="Instagram" />
                         <span>@inaraangra</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="social d-none d-lg-block">
+                  <h5 className="resume-heading">Curriculo</h5>
+                  <ul className="resume-list social-links">
+                    <li>
+                      <a
+                        className="download"
+                        href="https://inaraangra.vercel.app/inara.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={download} alt="Download CV" />
+                        Download PDF
                       </a>
                     </li>
                   </ul>
