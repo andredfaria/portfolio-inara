@@ -28,80 +28,88 @@ const ResumePage = props => {
               <div className="col-12 col-lg-5 resume-col">
                 <div className="user-personal-info">
                   <div className="profile-image-div">
-                    <img className="img-fluid" src={profile} alt="" />
+                    <img className="img-fluid" src={profile} alt="Perfil de Inara Angra" />
                   </div>
-                  <br />
-                  <br />
                   <h5 className="resume-heading profile-name">Inara Angra</h5>
                   <p>Jornalista & Repórter</p>
                   <ul className="resume-list">
                     <li>
-                      <img src={inbox} alt="" />
-                      inaraangra@hotmail.com
+                      <img src={inbox} alt="Email" />
+                      <a href="mailto:inaraangra@hotmail.com">
+                        inaraangra@hotmail.com
+                      </a>
                     </li>
                     <li>
-                      <img src={location} alt="" />
+                      <img src={location} alt="Localização" />
                       Poços de Caldas, Minas Gerais, Brasil
                     </li>
                     <li>
-                      <img src={art} alt="" />
-                      <a href="https://tvplan.com.br/">TV Plan</a>
+                      <img src={art} alt="Website" />
+                      <a
+                        href="https://tvplan.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        TV Plan
+                      </a>
                     </li>
                     <li>
-                      <img src={inbox} alt="" />
+                      <img src={inbox} alt="Telefone" />
                       <a href="https://wa.me/5535998084624/">
                         (35) 9 9808-4624
                       </a>
                     </li>
                     <li>
-                      <button className="download">
-                        <img
-                          style={{ Color: "white" }}
-                          src={download}
-                          alt="download"
-                        />
-                        <a
-                          href="https://inaraangra.vercel.app/inara.pdf"
-                          style={{ textdecoration: "none", color: "white" }}
-                        >
-                          Download CV
-                        </a>
-                      </button>
+                      <a
+                        className="download"
+                        href="https://inaraangra.vercel.app/inara.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={download} alt="Download CV" />
+                        Download CV
+                      </a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="education d-none d-lg-block">
                   <h5 className="resume-heading">Formação</h5>
-
-                  <div className="education-item row">
-                    <p className="col-12 pl-0">
-                      <a href="https://www.unicesumar.edu.br/" target="_blank">
+                  <div className="education-item">
+                    <p>
+                      <a
+                        href="https://www.unicesumar.edu.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         UNICESUMAR
                       </a>
                     </p>
-                    <div className="eduAndSchool col-6 pl-0">
-                      <img src={school} alt="" />
+                    <div className="eduAndSchool">
+                      <img src={school} alt="Curso" />
                       Comunicação Social com ênfase em Publicidade e Propaganda
                     </div>
-                    <div className="eduAndSchool col-6">
-                      <img src={calender} alt="" />
+                    <div className="eduAndSchool">
+                      <img src={calender} alt="Data" />
                       Janeiro, 2023 - Até o momento
                     </div>
                   </div>
-
-                  <div className="education-item row">
-                    <p className="col-12 pl-0">
-                      <a href="https://unifae.edu.br/" target="_blank">
+                  <div className="education-item">
+                    <p>
+                      <a
+                        href="https://unifae.edu.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         UNIFAE
                       </a>
                     </p>
-                    <div className="eduAndSchool col-6 pl-0">
-                      <img src={school} alt="" />
+                    <div className="eduAndSchool">
+                      <img src={school} alt="Curso" />
                       Comunicação Social com ênfase em Jornalismo
                     </div>
-                    <div className="eduAndSchool col-6">
-                      <img src={calender} alt="" />
+                    <div className="eduAndSchool">
+                      <img src={calender} alt="Data" />
                       Janeiro, 2019 - Dezembro, 2022
                     </div>
                   </div>
@@ -110,48 +118,36 @@ const ResumePage = props => {
                 <div className="social d-none d-lg-block">
                   <h5 className="resume-heading">Social</h5>
                   <ul className="resume-list social-links">
-                    <li style={{ marginTop: "20px" }}>
-                      <li>
-                        <a href="#home" onClick={(ev) => ev.preventDefault()}>
-                          {" "}
-                          <img src={linkedin} alt="icon-linkedin" />{" "}
-                          <span>
-                            <a
-                              href="https://www.linkedin.com/in/inaraangra/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ textDecoration: "none" }}
-                            >
-                              Inara Angra
-                            </a>
-                          </span>
-                        </a>
-                      </li>{" "}
-                      <li>
-                        <a href="#home" onClick={(ev) => ev.preventDefault()}>
-                          {" "}
-                          <img src={instagram} alt="icon-instagram" />{" "}
-                          <span>
-                            <a
-                              href="https://www.instagram.com/inaraangra/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ textDecoration: "none" }}
-                            >
-                              @inaraangra
-                            </a>
-                          </span>
-                        </a>
-                      </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/inaraangra/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={linkedin} alt="LinkedIn" />
+                        <span>Inara Angra</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/inaraangra/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={instagram} alt="Instagram" />
+                        <span>@inaraangra</span>
+                      </a>
                     </li>
                   </ul>
                 </div>
+
                 <img
                   className="left-bottom-img d-none d-lg-block"
                   src={ellipse}
-                  alt=""
+                  alt="Imagem decorativa"
                 />
               </div>
+
               <div className="col-12 col-lg-7 resume-col">
                 <div className="summary">
                   <h5 className="resume-heading">Resumo Profissional</h5>
@@ -206,7 +202,6 @@ const ResumePage = props => {
                       <div className="experience-detail-item">
                         <img src={school} alt="" />
                         Estágio em Publicidade e Propaganda
-                        {/* Comuinicação interna, produção de comunicado e materias, organização de visistas e eventos */}
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />
@@ -249,7 +244,7 @@ const ResumePage = props => {
                       <span className="experience-text">
                         <a href="https://tvplan.com.br/">TV Plan</a>
                       </span>
-                      <span className="remote">Poços de Caldas, MG</span>
+                      <span className="remote">Presencial</span>
                     </div>
                     <div className="experience-detail">
                       <div className="experience-detail-item">
