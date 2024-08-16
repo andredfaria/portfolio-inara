@@ -1,43 +1,103 @@
-import $ from "jquery";
-import React, { Fragment, useEffect } from "react";
+import React from "react";
 import "./_footer.scss";
+import instagram from "../../assets/images/instagram.png";
+import linkedin from "../../assets/images/linkedin.png";
 
-const Footer = props => {
-
-  useEffect(() => {
-    $(window).scroll(function() {
-      var height = $(window).scrollTop();
-      if (height > 100) {
-        $("#back2Top").fadeIn();
-      } else {
-        $("#back2Top").fadeOut();
-      }
-    });
-    $(document).ready(function() {
-      $("#back2Top").click(function(event) {
-        event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-      });
-    });
-  });
-
+const Footer = () => {
   return (
-    <Fragment>
-      <div className="container footer">
-        <div className="row ml-0 mr-0">
-          <div
-            className="col-12 col-lg-6 pl-0 footer-text"
-            style={{ color: "#000000", fontweight: "bold" }}
-          >
-            Desenvolvido por André de Faria &copy; 2024
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-6">
+            <ContactForm />
+          </div>
+          <div className="col-12 col-lg-6">
+            <SocialIcons />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 text-center">
+            <p className="footer-text">
+              Desenvolvido por André de Faria &copy; 2024
+            </p>
           </div>
         </div>
       </div>
-      <div id="back2Top" title="Back to top" href="#">
-        &#10148;
-      </div>
-    </Fragment>
+    </footer>
   );
 };
+
+const ContactForm = () => {
+  return (
+    <div className="contact-form">
+      <h1>Envie um email</h1>
+      <form
+        target="_blank"
+        action="https://formsubmit.co/inaraangra@hotmail.com"
+        method="POST"
+      >
+        <div className="form-group">
+          <div className="form-row">
+            <div className="col">
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Nome completo"
+                required
+              />
+            </div>
+            <div className="col">
+              <input
+                type="email"
+                name="email"
+                className="form-control"
+                placeholder="Seu e-mail"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div className="form-group">
+          <textarea
+            placeholder="Sua mensagem"
+            className="form-control"
+            name="message"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="btn btn-lg btn-dark btn-block">
+          Enviar 📬
+        </button>
+      </form>
+    </div>
+  );
+};
+
+const SocialIcons = () => {
+  return (
+    <div className="footer-social">
+      <a
+        href="https://www.instagram.com/seuperfil"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-social-icon"
+        aria-label="Instagram"
+      >
+        <img src={instagram} alt="Instagram" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/seuperfil"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-social-icon"
+        aria-label="LinkedIn"
+      >
+        <img src={linkedin} alt="LinkedIn" />
+      </a>
+    </div>
+  );
+};
+
 export default Footer;
