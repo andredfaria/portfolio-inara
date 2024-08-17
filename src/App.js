@@ -7,7 +7,7 @@ import * as routes from "./routePaths";
 import Homepage from "./components/Homepage/Homepage";
 import ResumePage from "./components/ResumePage/ResumePage";
 import TV from "./components/TV/TVPage";
-
+ 
 function App(props) {
   const { pathname, hash } = useLocation();
   console.log(hash);
