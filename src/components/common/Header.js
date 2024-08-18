@@ -3,14 +3,8 @@ import { Link } from "react-router-dom";
 import HamburgerMenu from "react-hamburger-menu";
 import * as routes from "../../routePaths";
 import "./_header.scss";
-// import contact from "../../assets/images/contact.png";
-// import socials1 from "../../assets/images/socials-1.png";
 import dark from "../../assets/images/dark.png";
 import light from "../../assets/images/light.png";
-import projects from "../../assets/images/projects.png";
-import projectsLite from "../../assets/images/projects-lite.png";
-
-// import {Animated} from "react-animated-css";
 
 const Header = props => {
   let [show, setShow] = useState(false);
@@ -77,12 +71,6 @@ const Header = props => {
         "#D9D9D9"
       );
   }
-    let projectSection = document.getElementById("projects-bg");
-    if (projectSection) {
-      darkTheme
-        ? (document.getElementById("projects-bg").src = projects)
-        : (document.getElementById("projects-bg").src = projectsLite);
-    }
   }, [darkTheme, setDarkTheme]);
   return (
     <div
@@ -142,25 +130,6 @@ const Header = props => {
                 Curriculo
               </Link>
             </li>
-
-{/* 
-            <li className="nav-item">
-              <Link
-                to={`${routes.homepage}televisao`}
-                className="nav-link"
-                style={{ color: "#969696" }}
-              >
-                TV
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to={`https://www.instagram.com/inaraangra/`}
-                className="nav-link"
-              >
-                <button className="primary-btn">Instagram</button>
-              </Link>
-            </li> */}
 
             <li className="nav-item d-none d-lg-block">
               <img

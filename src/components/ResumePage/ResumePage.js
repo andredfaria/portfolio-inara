@@ -181,7 +181,7 @@ const ResumePage = props => {
                       <span className="experience-text">
                         <a href="https://tvplan.com.br/">TV Plan</a>
                       </span>
-                      <span className="remote">Poços de Caldas, MG</span>
+                      <span className="remote">Presencial</span>
                     </div>
                     <div className="experience-detail">
                       <div className="experience-detail-item">
@@ -190,7 +190,7 @@ const ResumePage = props => {
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />
-                        Brasil
+                        Poços de Caldas, MG
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
@@ -215,7 +215,7 @@ const ResumePage = props => {
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />
-                        Brasil
+                        Caldas, MG
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
@@ -263,7 +263,7 @@ const ResumePage = props => {
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />
-                        Brasil
+                        Poços de Caldas, MG
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
@@ -285,11 +285,10 @@ const ResumePage = props => {
                       <div className="experience-detail-item">
                         <img src={school} alt="" />
                         Estágio em Jornalismo
-                        {/* Comuinicação interna, produção de comunicado e materias, organização de visistas e eventos */}
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />
-                        Caldas
+                        Caldas, MG
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
@@ -311,7 +310,6 @@ const ResumePage = props => {
                       <div className="experience-detail-item">
                         <img src={school} alt="" />
                         Estágio em Jornalismo
-                        {/* Comuinicação interna, produção de comunicado e materias, organização de visistas e eventos */}
                       </div>
                       <div className="experience-detail-item">
                         <img src={location} alt="" />

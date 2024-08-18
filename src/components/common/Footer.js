@@ -18,7 +18,13 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 text-center">
             <p className="footer-text">
-              Desenvolvido por André de Faria &copy; 2024
+              Desenvolvido por
+              <a href="https://www.linkedin.com/in/andre-de-faria/"
+                target="_blank" rel="noopener noreferrer"
+              >
+                André de Faria &copy;
+              </a>{" "}
+              2024
             </p>
           </div>
         </div>
@@ -79,7 +85,7 @@ const SocialIcons = () => {
   return (
     <div className="footer-social">
       <a
-        href="https://www.instagram.com/seuperfil"
+        href="https://www.instagram.com/inaraangra/"
         target="_blank"
         rel="noopener noreferrer"
         className="footer-social-icon"
@@ -88,7 +94,7 @@ const SocialIcons = () => {
         <img src={instagram} alt="Instagram" />
       </a>
       <a
-        href="https://www.linkedin.com/in/seuperfil"
+        href="https://www.linkedin.com/in/inaraangra/"
         target="_blank"
         rel="noopener noreferrer"
         className="footer-social-icon"

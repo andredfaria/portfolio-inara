@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./assets/scss/style.scss";
 import "./App.css";
-import * as routes from "./routePaths";
 import Homepage from "./components/Homepage/Homepage";
 import ResumePage from "./components/ResumePage/ResumePage";
 import TV from "./components/TV/TVPage";
