@@ -1,7 +1,8 @@
 .footer {
-  margin-top: 82px;
+  background-color: var(--background-color); // Usando a mesma cor de fundo que o header
   padding: 20px 0;
-  background-color: #f8f9fa;
+  position: relative;
+  z-index: 1020; // Para garantir que o footer fique acima de outros elementos se necessário
 
   .row {
     display: flex;
@@ -11,17 +12,17 @@
   }
 
   .footer-text {
-    color: rgb(117, 116, 116);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--paragraph); // Usando a mesma cor de texto que o header
+    font-family: Poppins; // Usando a mesma fonte que o header
     font-weight: 400;
-    font-size: 0.87rem;
+    font-size: 13px; // Ajustado para corresponder ao tamanho da fonte no header
     text-align: center;
     margin-top: 15px;
   }
 
   .contact-form {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.5rem; // Ajuste o tamanho da fonte conforme necessário
       margin-bottom: 15px;
     }
 
@@ -39,6 +40,16 @@
             margin-right: 0;
           }
         }
+      }
+
+      .form-control {
+        border-radius: 4px; // Padronizando com o botão do header
+      }
+
+      .btn-dark {
+        background-color: #8247E5; // Cor do botão correspondente à do header
+        border: none;
+        border-radius: 4px;
       }
     }
   }
@@ -62,4 +73,36 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 991px) {
+  .footer {
+    margin-top: 38px; // Ajuste para corresponder ao espaçamento do header
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form h1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  margin-right: 1rem; // Ajuste conforme necessário
+}
+
+.footer-social-icon {
+  margin-right: 0.5rem; // Ajuste o espaçamento entre os ícones
+}
+
+.footer-social-icon img {
+  width: 24px; // Ajuste o tamanho dos ícones conforme necessário
+  height: 24px;
 }
