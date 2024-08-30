@@ -20,8 +20,8 @@ const Homepage = props => {
     <Fragment>
       <Header />
       <Introduction />
-      <AboutMe />
       <VideoCarousel videos={videos}  width="100%" height="100%" title={"Destaques"} />
+      <AboutMe />
       <Footer />
     </Fragment>
   );
