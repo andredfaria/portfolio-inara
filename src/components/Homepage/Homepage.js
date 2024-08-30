@@ -13,7 +13,7 @@ const Homepage = props => {
     { id: "3", url: "https://www.youtube.com/embed/StQBIoAfAzw" },
   ];
 
-  https: useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
