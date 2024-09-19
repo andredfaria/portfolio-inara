@@ -6,124 +6,131 @@ import whatsapp from "../../assets/images/whatsapp.png";
 
 const Footer = () => {
   return (
-    <selection className="mt-3 aboutMe container-fluid section-spacing container mt-3 pt-4 pb-4 border-top">
+    <footer className="bg-light">
       <div className="container">
-        <div className="row mb-3">
-          <div className="col">
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-8">
             <ContactForm />
           </div>
         </div>
-      </div>
-      <footer className="mt-3 pt-4 pb-4 border-top">
         <div className="row">
           <div className="col-12 text-center">
-            <p className="mb-0">
-              Desenvolvido por
+            <p className="mb-0 p-2 text-muted">
+              Desenvolvido por{" "}
               <a
                 href="https://www.linkedin.com/in/andre-de-faria/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark"
+                className="text-dark fw-bold"
               >
-                André de Faria &copy;
+                André de Faria
               </a>{" "}
-              2024
+              &copy; {new Date().getFullYear()}
             </p>
           </div>
         </div>
-      </footer>
-    </selection>
+      </div>
+    </footer>
   );
 };
 
 const ContactForm = () => {
   return (
-    <div className="contact-form">
-      <h1 className="h4 m-1">Entre em contato:</h1>
-      <SocialIcons />
-      <form
-        className="mt-2"
-        target="_blank"
-        action="https://formsubmit.co/inaraangra@hotmail.com"
-        method="POST"
-      >
-        <div className="mb-3">
-          <div className="row">
-            <div className="col-md-6 m-1">
-              <input
-                type="text"
-                name="name"
-                className="form-control"
-                placeholder="Nome completo"
-                required
-              />
-            </div>
-            <div className="col-md-6 m-1">
-              <input
-                type="email"
-                name="email"
-                className="form-control"
-                placeholder="Seu e-mail"
-                required
-              />
-            </div>
+    <div className="card shadow-sm">
+      <div className="card-body">
+        <h2 className="h3 text-center">Entre em contato</h2>
+        <SocialIcons />
+        <form
+          className="mt-4"
+          target="_blank"
+          action="https://formsubmit.co/inaraangra@hotmail.com"
+          method="POST"
+        >
+          <div className="mb-3">
+            <input
+              type="text"
+              name="name"
+              className="form-control form-control-lg"
+              placeholder="Nome completo"
+              required
+            />
           </div>
-        </div>
-        <div className="mb-3">
-          <textarea
-            placeholder="Sua mensagem"
-            className="form-control"
-            name="message"
-            rows="5"
-            required
-          ></textarea>
-        </div>
-        <button type="submit" className="btn btn-dark btn-lg btn-block">
-          Enviar um email 📬
-        </button>
-      </form>
+          <div className="mb-3">
+            <input
+              type="email"
+              name="email"
+              className="form-control form-control-lg"
+              placeholder="Seu e-mail"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <textarea
+              placeholder="Sua mensagem"
+              className="form-control form-control-lg"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="btn btn-primary btn-lg w-100">
+            Enviar um email 📬
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
 
 const SocialIcons = () => {
   return (
-    <div className="row">
-      <div className="m-2">
-        <a
-          href="https://www.instagram.com/inaraangra/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="me-3"
-        >
-          <img src={instagram} alt="Instagram" className="img-fluid" style={{ width: '3em', height: '3em' }} />
-        </a>
-        </div>
-        <div className="m-2">
-        <a
-          href="https://www.linkedin.com/in/inaraangra/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="me-3"
-        >
-          <img src={linkedin} alt="LinkedIn" className="img-fluid" style={{ width: '3em', height: '3em' }} />
-        </a>
-      </div>
-       <div className="m-2">
-        <a
-          href="https://wa.me/553598084624/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="me-3"
-        >
-          <img src={whatsapp} alt="LinkedIn" className="img-fluid" style={{ width: '3em', height: '3em' }} />
-        </a>
-      </div>
+    <div className="d-flex justify-content-center">
+      <a
+        href="https://www.instagram.com/inaraangra/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="m-1"
+      >
+        <img
+          src={instagram}
+          alt="Instagram"
+          className="social-icon"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/inaraangra/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="m-1"
+      >
+        <img
+          src={linkedin}
+          alt="LinkedIn"
+          className="social-icon"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a
+        href="https://wa.me/553598084624/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="m-1"
+        aria-label="WhatsApp"
+      >
+        <img
+          src={whatsapp}
+          alt="WhatsApp"
+          className="social-icon"
+          width="32"
+          height="32"
+        />
+      </a>
     </div>
-
   );
 };
 

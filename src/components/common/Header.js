@@ -130,8 +130,17 @@ const Header = props => {
                 Curriculo
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                to={`${routes.homepage}televisao`}
+                className="nav-link"
+                style={{ color: "#969696" }}
+              >
+                Portifólio
+              </Link>
+            </li>
 
-            <li className="nav-item d-none d-lg-block">
+            <li className="nav-item left d-none d-lg-block">
               <img
                 src={darkTheme ? light : dark}
                 alt=""
