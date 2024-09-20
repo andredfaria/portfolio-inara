@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect } from "react";
 import art from "../../assets/images/art.png";
-import contact from "../../assets/images/contact.png";
 import calender from "../../assets/images/calender.png";
 import download from "../../assets/images/download.png";
+import profile from "../../assets/images/inara-angra-apresentadora.jpeg";
 import inbox from "../../assets/images/inbox.png";
 import instagram from "../../assets/images/instagram.png";
 import linkedin from "../../assets/images/linkedin.png";
@@ -12,7 +12,6 @@ import school from "../../assets/images/school.png";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./_resume.scss";
-import profile from "../../assets/images/inara-angra-apresentadora.jpeg";
 
 const ResumePage = props => {
   useEffect(() => {

@@ -5,8 +5,8 @@ import "./VideoCarousel.scss";
 
 const VideoCarousel = ({ videos, title }) => {
   return (
-    <div className="video-carousel-container container-fluid my-2">
-      <div className="row justify-content-center">
+    <div className="video-carousel-container container-fluid">
+      <div className="row">
         <div className="col-lg-10">
           <div className="position-relative">
             <h2 className="carousel-title display-4 text-center">{title}</h2>
@@ -22,10 +22,9 @@ const VideoCarousel = ({ videos, title }) => {
             className="video-carousel shadow-lg rounded"
           >
             {videos.map((video) => (
-              <div key={video.id}>
-                <div className="embed-responsive embed-responsive-16by9">
+              <div key={video.id} className="video-wrapper">
+                <div className="aspect-ratio-container">
                   <iframe
-                    className="embed-responsive-item"
                     src={video.url}
                     title={`YouTube video player ${video.id}`}
                     frameBorder="0"

@@ -1,4 +1,3 @@
-
 tv-page {
   background-color: #f8f9fa;
 
@@ -21,5 +20,31 @@ tv-page {
     &:hover {
       transform: translateY(-5px);
     }
+  }
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.aspect-ratio-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-ratio-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 2rem;
   }
 }
