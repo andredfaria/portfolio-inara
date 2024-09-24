@@ -9,8 +9,6 @@ import TV from "./components/TV/TVPage";
  
 function App(props) {
   const { pathname, hash } = useLocation();
-  console.log(hash);
-  console.log(props);
   useEffect(() => {
     if (!hash || pathname === "/resume") {
       document.body.scrollTop = 0;
