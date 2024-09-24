@@ -6,79 +6,77 @@ import whatsapp from "../../assets/images/whatsapp.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8">
-            <ContactForm />
+    <>
+      <section
+        id="intro"
+        className="intro container-fluid section-spacing"
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-12 about-text-col">
+              <div className="section-heading">
+                <h4 className="about-me-heading">Entre em contato</h4>
+              </div>
+              <div className="about-text">
+                <ContactForm />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12 text-center">
-            <p className="mb-0 p-2 text-muted">
-              Desenvolvido por{" "}
-              <a
-                href="https://www.linkedin.com/in/andre-de-faria/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark fw-bold"
-              >
-                André de Faria
-              </a>{" "}
-              &copy; {new Date().getFullYear()}
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </section>
+    </>
   );
 };
 
 const ContactForm = () => {
   return (
-    <div className="card shadow-sm">
-      <div className="card-body">
-        <h2 className="h3 text-center">Entre em contato</h2>
-        <SocialIcons />
-        <form
-          className="mt-4"
-          target="_blank"
-          action="https://formsubmit.co/inaraangra@hotmail.com"
-          method="POST"
-        >
-          <div className="mb-3">
-            <input
-              type="text"
-              name="name"
-              className="form-control form-control-lg"
-              placeholder="Nome completo"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="email"
-              name="email"
-              className="form-control form-control-lg"
-              placeholder="Seu e-mail"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <textarea
-              placeholder="Sua mensagem"
-              className="form-control form-control-lg"
-              name="message"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary btn-lg w-100">
-            Enviar um email 📬
-          </button>
-        </form>
+    <section id="intro" className=" container-fluid">
+      <div className="aboutMe">
+        <div className="card-body">
+          <SocialIcons />
+          <form
+            className=" aboutMe mt-4"
+            target="_blank"
+            action="https://formsubmit.co/inaraangra@hotmail.com"
+            method="POST"
+          >
+            <div className=" aboutMe mb-3">
+              <input
+                type="text"
+                name="name"
+                className=" aboutMe form-control form-control-lg"
+                placeholder="Nome completo"
+                required
+              />
+            </div>
+            <div className=" aboutMe mb-3">
+              <input
+                type="email"
+                name="email"
+                className=" aboutMe form-control form-control-lg"
+                placeholder="Seu e-mail"
+                required
+              />
+            </div>
+            <div className=" aboutMe mb-4">
+              <textarea
+                placeholder="Sua mensagem"
+                className=" aboutMe form-control form-control-lg"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="primary-btn btn btn-primary btn-lg w-100"
+            >
+              Enviar um email 📬
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
