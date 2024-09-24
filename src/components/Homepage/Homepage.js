@@ -3,8 +3,7 @@ import Footer from "../common/Footer";
 import Header from "../common/Header";
 import AboutMe from "./AboutMe/AboutMe";
 import Introduction from "./Introduction/Introduction";
-import VideoCarousel from "./VideoCarousel/VideoCarousel";
-
+import "./Home.scss";
 const Homepage = props => {
   const videos = [
     { id: "1", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
@@ -20,7 +19,50 @@ const Homepage = props => {
     <Fragment>
       <Header />
       <Introduction />
-      <VideoCarousel videos={videos}  width="100%" height="100%" title={"Destaques"} />
+      <section id="intro" className="intro container section-spacing">
+        <div className="row">
+          <div className="section-heading">
+            <h4 className="about-me-heading">Destaques</h4>
+          </div>
+          <div id="video" className="carousel slide" data-bs-ride="carousel" >
+            <ol className="carousel-indicators">
+              {videos.map((_, index) => (
+                <li
+                  key={index}
+                  data-bs-target="#video"
+                  data-bs-slide-to={index}
+                  className={index === 0 ? "active" : ""}
+                ></li>
+              ))}
+            </ol>
+            <div className="carousel-inner">
+              {videos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
+                  <div className="ratio ratio-16x9">
+                    <iframe
+                      src={video.url}
+                      title={`Vídeo ${index + 1}`}
+                      allowFullScreen
+                      className="rounded d-block w-100 fullscreen-video"
+                    ></iframe>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a className="carousel-control-prev"href="#video" role="button" data-bs-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Anterior</span>
+            </a>
+            <a className="carousel-control-next" href="#videoCarousel" role="button" data-bs-slide="next" >
+              <span className="carousel-control-next-icon" aria-hidden="true" ></span>
+              <span className="visually-hidden">Próximo</span>
+            </a>
+          </div>
+        </div>
+      </section>
       <AboutMe />
       <Footer />
     </Fragment>
