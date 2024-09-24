@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useCallback } from "react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import AboutMe from "./AboutMe/AboutMe";
@@ -13,8 +13,21 @@ const Homepage = (props) => {
     { id: "4", url: "https://www.youtube.com/embed/StQBIoAfAzw" }, // corrigido o ID
   ];
 
+  const handleNext = useCallback(() => {
+    if (typeof window !== 'undefined' && window.jQuery) {
+      window.jQuery('#video-carrusel-inara').carousel('next');
+    }
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    if (typeof window !== 'undefined' && window.jQuery) {
+      window.jQuery('#video-carrusel-inara').carousel('prev');
+    }
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
   }, []);
 
   return (
@@ -58,9 +71,8 @@ const Homepage = (props) => {
             </div>
             <a
               className="carousel-control-prev"
-              href="#video-carrusel-inara"
               role="button"
-              data-bs-slide="prev"
+              onClick={handlePrev}
             >
               <span
                 className="carousel-control-prev-icon"
@@ -70,9 +82,8 @@ const Homepage = (props) => {
             </a>
             <a
               className="carousel-control-next"
-              href="#video-carrusel-inara"
               role="button"
-              data-bs-slide="next"
+              onClick={handleNext}
             >
               <span
                 className="carousel-control-next-icon"
