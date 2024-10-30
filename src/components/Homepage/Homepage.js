@@ -12,6 +12,7 @@ const Homepage = (props) => {
     { id: "2", url: "https://www.youtube.com/embed/V5npXQRuOak" },
     { id: "3", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
     { id: "4", url: "https://www.youtube.com/embed/StQBIoAfAzw" },
+    { id :"5", url: "https://www.youtube.com/embed/kzNyto33AoA" }
   ];
 
   const handleNext = useCallback(() => {
@@ -90,7 +91,7 @@ const Homepage = (props) => {
                   data-bs-slide="prev"
                 >
                   <span
-                    className="carousel-control-prev-icon p-3 bg-dark bg-opacity-50 rounded-circle"
+                    className="carousel-control-prev-icon p-3 bg-dark bg-opacity-50"
                     aria-hidden="true"
                   ></span>
                   <span className="visually-hidden">Anterior</span>
@@ -103,7 +104,7 @@ const Homepage = (props) => {
                   data-bs-slide="next"
                 >
                   <span
-                    className="carousel-control-next-icon p-3 bg-dark bg-opacity-50 rounded-circle"
+                    className="carousel-control-next-icon p-3 bg-dark bg-opacity-50"
                     aria-hidden="true"
                   ></span>
                   <span className="visually-hidden">Próximo</span>

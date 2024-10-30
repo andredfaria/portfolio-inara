@@ -303,3 +303,67 @@ tv-page {
 .video-carousel-container {
   margin: 0 auto; // Centraliza o carousel
 }
+
+.instagram-post-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+
+  .instagram-frame {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Estilos padrão para botões de controle do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+  /* Para garantir que eles fiquem acima do conteúdo */
+}
+
+/* Estilos para o ícone */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px;
+  /* Tamanho do ícone */
+  height: 30px;
+  /* Tamanho do ícone */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 576px) {
+
+  /* Estilos aplicados a telas menores que 576px */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    /* Largura do botão */
+    height: 50px;
+    /* Altura do botão */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 40px;
+    /* Tamanho do ícone maior para melhor acessibilidade */
+    height: 40px;
+    /* Tamanho do ícone maior para melhor acessibilidade */
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+    /* Ajuste a posição do botão esquerdo */
+  }
+
+  .carousel-control-next {
+    right: 10px;
+    /* Ajuste a posição do botão direito */
+  }
+}

@@ -96,7 +96,6 @@ portifolio-inara/
 
 ## 📦 Scripts Disponíveis
 
-- `npm run dev` - Inicia o servidor de desenvolvimento
 - `npm start` - Inicia o servidor
 - `npm build` - Gera a versão de produção
 - `npm test` - Executa os testes
