@@ -1,13 +1,6 @@
 import React from "react";
 import "./_aboutMe.scss";
 
-const skills = [
-  { name: "Pesquisa  ", level: 80 },
-  { name: "Escrita", level: 90 },
-  { name: "Entrevista", level: 98 },
-  { name: "Edição ", level: 70 },
-];
-
 const AboutMe = (props) => (
   <section id="aboutMe" className="mt-3 aboutMe container-fluid section-spacing">
     <div className="container">

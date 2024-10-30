@@ -1,65 +1,61 @@
-import React, { Fragment,useCallback, useEffect } from "react";
-import Header from "../common/Header";
-import VideoCarousel from "../Homepage/VideoCarousel/VideoCarousel";
-import Footer from "../common/Footer";
-import "./_TV.scss";
+import React, { Fragment, useCallback, useEffect } from "react";
 import dotsSquare from "../../assets/images/dots-square.png";
+import Footer from "../common/Footer";
+import Header from "../common/Header";
+import "./_TV.scss";
 
 const TV = () => {
-  const service = {
-    title: "Prestação de Serviço",
-    videos: [
-      { id: "1", url: "https://www.youtube.com/embed/RCLVevPL8hE" },
-      { id: "2", url: "https://www.youtube.com/embed/3chW8DoALhM" },
-      { id: "3", url: "https://www.youtube.com/embed/y_VjWy7ZFLw" },
-      { id: "4", url: "https://www.youtube.com/embed/6LQxd8BbzIU" },
-    ],
-  }
+  const categories = [
+    {
+      title: "Prestação de Serviço",
+      videos: [
+        { id: "1", url: "https://www.youtube.com/embed/RCLVevPL8hE" },
+        { id: "2", url: "https://www.youtube.com/embed/3chW8DoALhM" },
+        { id: "3", url: "https://www.youtube.com/embed/y_VjWy7ZFLw" },
+        { id: "4", url: "https://www.youtube.com/embed/6LQxd8BbzIU" },
+      ],
+    },
+    {
+      title: "Cultura e Entretenimento",
+      videos: [
+        { id: "5", url: "https://www.youtube.com/embed/sSrVd0qm2zU" },
+        { id: "6", url: "https://www.youtube.com/embed/Imaw6VNfG1c" },
+        { id: "7", url: "https://www.youtube.com/embed/DDbHcsE52jQ" },
+        { id: "8", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
+      ],
+    },
+    {
+      title: "Policial",
+      videos: [
+        { id: "13", url: "https://www.youtube.com/embed/bSb5WzBSwTU" },
+        { id: "14", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
+      ],
+    },
+    {
+      title: "Esporte",
+      videos: [
+        { id: "19", url: "https://www.youtube.com/embed/gWSd68qov7w" },
+        { id: "20", url: "https://www.youtube.com/embed/KrIQRWXRotM" },
+        { id: "21", url: "https://www.youtube.com/embed/V5npXQRuOak" },
+      ],
+    },
+  ];
 
-  const culture = {
-    title: "Cultura e Entretenimento",
-    videos: [
-      { id: "5", url: "https://www.youtube.com/embed/sSrVd0qm2zU" },
-      { id: "6", url: "https://www.youtube.com/embed/Imaw6VNfG1c" },
-      { id: "7", url: "https://www.youtube.com/embed/DDbHcsE52jQ" },
-      { id: "8", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
-    ],
-  }
-
-  const police = {
-    title: "Policial",
-    videos: [
-      { id: "13", url: "https://www.youtube.com/embed/bSb5WzBSwTU" },
-      { id: "14", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
-    ],
-  }
-
-  const sport = {
-    title: "Esporte",
-    videos: [
-      { id: "19", url: "https://www.youtube.com/embed/gWSd68qov7w" },
-      { id: "20", url: "https://www.youtube.com/embed/KrIQRWXRotM" },
-      { id: "21", url: "https://www.youtube.com/embed/V5npXQRuOak" },
-    ],
-  }
-
-  useEffect(() => {
-    const handleNext = () => {
-      if (typeof window !== "undefined" && window.jQuery) {
-        window.jQuery("#video-carrusel-inara").carousel("next");
-      }
-    };
-  }, []);
+  const getCategoryId = (title) => title.toLowerCase().replace(/\s+/g, "-");
 
   const handleNext = useCallback((category) => {
     if (typeof window !== "undefined" && window.jQuery) {
-      window.jQuery(`#video-carrusel-${category.toLowerCase().replace(/\s+/g, '-')}`).carousel("next");
+      window
+        .jQuery(`#video-carrusel-${getCategoryId(category)}`)
+        .carousel("next");
     }
   }, []);
 
   const handlePrev = useCallback((category) => {
     if (typeof window !== "undefined" && window.jQuery) {
-      window.jQuery(`#video-carrusel-${category.toLowerCase().replace(/\s+/g, '-')}`).carousel("prev");
+      window
+        .jQuery(`#video-carrusel-${getCategoryId(category)}`)
+        .carousel("prev");
     }
   }, []);
 
@@ -67,90 +63,115 @@ const TV = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const VideoCarousel = ({ category }) => (
+    <div
+      id={`video-carrusel-${getCategoryId(category.title)}`}
+      className="carousel slide video-carousel shadow-lg rounded overflow-hidden"
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-indicators">
+        {category.videos.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            data-bs-target={`#video-carrusel-${getCategoryId(category.title)}`}
+            data-bs-slide-to={index}
+            className={index === 0 ? "active" : ""}
+            aria-current={index === 0 ? "true" : "false"}
+            aria-label={`Slide ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+
+      <div className="carousel-inner h-100">
+        {category.videos.map((video, index) => (
+          <div
+            key={video.id}
+            className={`carousel-item h-100 ${index === 0 ? "active" : ""}`}
+          >
+            <div className="video-wrapper">
+              <iframe
+                src={video.url}
+                title={`Vídeo ${index + 1}`}
+                allowFullScreen
+                className="video-frame"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button
+        className="carousel-control-prev"
+        type="button"
+        onClick={() => handlePrev(category.title)}
+      >
+        <span
+          className="carousel-control-prev-icon p-3 bg-dark bg-opacity-50 rounded-circle"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Anterior</span>
+      </button>
+      <button
+        className="carousel-control-next"
+        type="button"
+        onClick={() => handleNext(category.title)}
+      >
+        <span
+          className="carousel-control-next-icon p-3 bg-dark bg-opacity-50 rounded-circle"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  );
+
   return (
     <Fragment>
       <Header />
-       <section id="intro" className="pb-0 intro container section-spacing">
+      <section id="intro" className="pb-0 intro container section-spacing">
         <div className="row">
-          <div className="intro-text-box">
-            <h1>Portfólio</h1>
-            <p className="description desc" style={{ color: "#969696" }}>
-              Esses são alguns dos meus trabalhos como jornalista e produtora.
-            </p>
+          <div className="col-12 col-lg-12 intro-text-col">
+            <div className="intro-text-box">
+              <h1>Portfólio - Inara Angra</h1>
+              <p className="sub-text">
+                Jornalista | Repórter | Apresentadora | Produtora
+              </p>
+              <p className="description desc" style={{ color: "#969696" }}>
+                Esses são alguns dos meus trabalhos como jornalista e produtora.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/inaraangra/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                <button className="primary-btn">Linkedin</button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
-      {[service, culture, police, sport].map((category) => (
+
+      {categories.map((category) => (
         <section
           key={category.title}
-          id={category.title.toLowerCase().replace(/\s+/g, "-")}
+          id={getCategoryId(category.title)}
           className="intro container section-spacing"
         >
           <div className="row">
-            <div className="section-heading">
-              <h4 className="about-me-heading">{category.title}</h4>
-            </div>
-            <div
-              id={`video-carrusel-${category.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <ol className="carousel-indicators">
-                {category.videos.map((_, index) => (
-                  <li
-                    key={index}
-                    data-bs-target={`#video-carrusel-${category.title
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
-                    data-bs-slide-to={index}
-                    className={index === 0 ? "active" : ""}
-                  ></li>
-                ))}
-              </ol>
-              <div className="carousel-inner">
-                {category.videos.map((video, index) => (
-                  <div
-                    key={video.id}
-                    className={`carousel-item ${index === 0 ? "active" : ""}`}
-                  >
-                    <iframe
-                      src={video.url}
-                      title={`Vídeo ${index + 1}`}
-                      allowFullScreen
-                      className="rounded d-block w-100 fullscreen-video"
-                    ></iframe>
-                  </div>
-                ))}
+            <div className="col-12">
+              <div className="section-heading">
+                <h4 className="about-me-heading">{category.title}</h4>
               </div>
-              <a
-                className="carousel-control-prev"
-                role="button"
-                onClick={() => handlePrev(category.title)}
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Anterior</span>
-              </a>
-              <a
-                className="carousel-control-next"
-                role="button"
-                onClick={() => handleNext(category.title)}
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Próximo</span>
-              </a>
+              <VideoCarousel category={category} />
             </div>
           </div>
-          {(category.title === "Prestação de Serviço" ||
-            category.title === "Policial" ||
-            category.title === "Esporte") && (
+
+          {["Prestação de Serviço", "Policial", "Esporte"].includes(
+            category.title
+          ) && (
             <img
               className="square-dots dots-img d-none d-lg-block"
               src={dotsSquare}
