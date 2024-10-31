@@ -3,6 +3,7 @@ import dotsSquare from "../../assets/images/dots-square.png";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./_TV.scss";
+import InstagramPost from "./InstagramEmbed";
 
 const TV = () => {
   const posts = [
@@ -96,33 +97,22 @@ const TV = () => {
   }, []);
 
   const InstagramPosts = () => (
-    <section className="intro container section-spacing">
-      <div className="row">
-        <div className="col-12">
-          <div className="section-heading">
-            <h4 className="about-me-heading">Instagram</h4>
-          </div>
-          <div className="row g-4">
-            {posts.map((post) => (
-              <div key={post.id} className="col-12 col-md-6 col-lg-4">
-                <div className="instagram-post-wrapper shadow-lg rounded overflow-hidden">
-                  <iframe
-                    src={`https://www.instagram.com/p/${post.url}/embed`}
-                    width="100%"
-                    height="450"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowTransparency="true"
-                    allow="encrypted-media"
-                    title={`Instagram Post ${post.id}`}
-                    className="instagram-frame"
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section className="instagram-posts container section-spacing">
+      <p className="section-description text-center">
+        Confira alguns dos meus posts mais impactantes no Instagram! Aqui,
+        compartilho momentos e reflexões sobre meu trabalho, destacando as
+        experiências que moldam minha trajetória profissional. Alguns desses
+        posts foram publicados no Instagram da TV, onde tive a oportunidade de
+        alcançar um público ainda maior. Espero que você se inspire com essas
+        histórias!
+      </p>
+      <div className="section-heading">
+        <h4 className="about-me-heading">Posts do Instagram</h4>
+      </div>
+      <div className="row g-4 justify-content-center">
+        {posts.map((post) => (
+          <InstagramPost post={post} key={post.id} />
+        ))}
       </div>
     </section>
   );
@@ -133,20 +123,7 @@ const TV = () => {
       className="carousel slide video-carousel shadow-lg rounded overflow-hidden"
       data-bs-ride="carousel"
     >
-      <div className="carousel-indicators">
-        {category.videos.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            data-bs-target={`#video-carrusel-${getCategoryId(category.title)}`}
-            data-bs-slide-to={index}
-            className={index === 0 ? "active" : ""}
-            aria-current={index === 0 ? "true" : "false"}
-            aria-label={`Slide ${index + 1}`}
-          ></button>
-        ))}
-      </div>
-
+      <h3 className="video-category-title">{category.title}</h3>
       <div className="carousel-inner h-100">
         {category.videos.map((video, index) => (
           <div
@@ -165,7 +142,6 @@ const TV = () => {
           </div>
         ))}
       </div>
-
       <button
         className="carousel-control-prev"
         type="button"
@@ -194,30 +170,42 @@ const TV = () => {
   return (
     <Fragment>
       <Header />
-      <section id="intro" className="pb-0 intro container section-spacing">
-        <div className="row">
-          <div className="col-12 col-lg-12 intro-text-col">
-            <div className="intro-text-box">
-              <h1>Portfólio - Inara Angra</h1>
-              <p className="sub-text">
-                Jornalista | Repórter | Apresentadora | Produtora
-              </p>
-              <p className="description desc" style={{ color: "#969696" }}>
-                Esses são alguns dos meus trabalhos como jornalista e produtora.
-              </p>
-              <a
-                href="https://www.linkedin.com/in/inaraangra/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="primary-btn">Linkedin</button>
-              </a>
-            </div>
-          </div>
+      <section id="intro" className="intro container section-spacing">
+        <div className="intro-text-box text-center">
+          <h1>Portfólio Visual - Inara Angra</h1>
+          <p className="description desc" style={{ color: "#969696" }}>
+            Bem-vindo ao meu portfólio! Neste espaço, você encontrará uma
+            curadoria dos meus trabalhos como jornalista e produtora. Explore
+            uma variedade de projetos, incluindo vídeos impactantes e posts
+            criativos do Instagram, que refletem minha paixão pela comunicação e
+            pela narrativa visual. Espero que você aproveite a visita!
+          </p>
+          <a
+            href="https://www.linkedin.com/in/inaraangra/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="primary-btn">Linkedin</button>
+          </a>
         </div>
       </section>
 
       <InstagramPosts />
+
+      <section className="video-section container section-spacing">
+        <h2 className="section-title text-center">
+          Acervo de Vídeos e materias
+        </h2>
+        <p className="section-description text-center">
+          Claro! Aqui está uma versão melhorada e mais elaborada do seu texto:
+          Aqui está uma seleção de vídeos que representam meu trabalho em
+          diversas áreas, abrangendo desde a prestação de serviços até cultura e
+          entretenimento. Os vídeos estão organizados nas seguintes categorias:
+          Matérias, Prestação de Serviço Matérias, Cultura e Entretenimento
+          Matérias, Policial Matérias, Esporte Esses conteúdos foram gentilmente
+          cedidos pela TV Plan, a emissora local onde trabalho atualmente.
+        </p>
+      </section>
 
       {videos.map((category) => (
         <section
