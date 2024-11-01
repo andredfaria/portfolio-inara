@@ -9,31 +9,31 @@ const TV = () => {
   const posts = [
     {
       id: "1",
-      url: "C9Nk5iSJbUs",
+      url: "C_qJl8CJpuQ",
     },
     {
       id: "2",
-      url: "DBuYADnM3Ql",
+      url: "C_8sXEvpvtl",
     },
     {
       id: "3",
-      url: "C_ECyLhuyy9",
+      url: "DAMlUDtpTTe",
     },
     {
       id: "4",
-      url: "C__01CxJvRG",
+      url: "DAeA5n0pDDk",
     },
     {
       id: "5",
-      url: "C9tLgqspI0i",
+      url: "DAvraUWpo5d",
     },
     {
       id: "6",
-      url: "C7jfgtXuF3Q",
+      url: "DBB-0VFpJRp",
     },
     {
       id: "7",
-      url: "C6PsLzDtqXJ",
+      url: "DBmo0A-J2GB",
     },
   ];
 
@@ -98,14 +98,6 @@ const TV = () => {
 
   const InstagramPosts = () => (
     <section className="instagram-posts container section-spacing">
-      <p className="section-description text-center">
-        Confira alguns dos meus posts mais impactantes no Instagram! Aqui,
-        compartilho momentos e reflexões sobre meu trabalho, destacando as
-        experiências que moldam minha trajetória profissional. Alguns desses
-        posts foram publicados no Instagram da TV, onde tive a oportunidade de
-        alcançar um público ainda maior. Espero que você se inspire com essas
-        histórias!
-      </p>
       <div className="section-heading">
         <h4 className="about-me-heading">Posts do Instagram</h4>
       </div>
@@ -170,43 +162,6 @@ const TV = () => {
   return (
     <Fragment>
       <Header />
-      <section id="intro" className="intro container section-spacing">
-        <div className="intro-text-box text-center">
-          <h1>Portfólio Visual - Inara Angra</h1>
-          <p className="description desc" style={{ color: "#969696" }}>
-            Bem-vindo ao meu portfólio! Neste espaço, você encontrará uma
-            curadoria dos meus trabalhos como jornalista e produtora. Explore
-            uma variedade de projetos, incluindo vídeos impactantes e posts
-            criativos do Instagram, que refletem minha paixão pela comunicação e
-            pela narrativa visual. Espero que você aproveite a visita!
-          </p>
-          <a
-            href="https://www.linkedin.com/in/inaraangra/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="primary-btn">Linkedin</button>
-          </a>
-        </div>
-      </section>
-
-      <InstagramPosts />
-
-      <section className="video-section container section-spacing">
-        <h2 className="section-title text-center">
-          Acervo de Vídeos e materias
-        </h2>
-        <p className="section-description text-center">
-          Claro! Aqui está uma versão melhorada e mais elaborada do seu texto:
-          Aqui está uma seleção de vídeos que representam meu trabalho em
-          diversas áreas, abrangendo desde a prestação de serviços até cultura e
-          entretenimento. Os vídeos estão organizados nas seguintes categorias:
-          Matérias, Prestação de Serviço Matérias, Cultura e Entretenimento
-          Matérias, Policial Matérias, Esporte Esses conteúdos foram gentilmente
-          cedidos pela TV Plan, a emissora local onde trabalho atualmente.
-        </p>
-      </section>
-
       {videos.map((category) => (
         <section
           key={category.title}
@@ -233,6 +188,8 @@ const TV = () => {
           )}
         </section>
       ))}
+
+      <InstagramPosts />
       <Footer />
     </Fragment>
   );
