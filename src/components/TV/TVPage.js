@@ -176,7 +176,6 @@ const TV = () => {
               <VideoCarousel category={category} />
             </div>
           </div>
-
           {["Prestação de Serviço", "Policial", "Esporte"].includes(
             category.title
           ) && (
