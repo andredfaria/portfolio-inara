@@ -187,7 +187,6 @@ const TV = () => {
           )}
         </section>
       ))}
-
       <InstagramPosts />
       <Footer />
     </Fragment>
