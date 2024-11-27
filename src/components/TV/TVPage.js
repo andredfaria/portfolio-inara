@@ -72,6 +72,10 @@ const TV = () => {
         { id: "21", url: "https://www.youtube.com/embed/V5npXQRuOak" },
       ],
     },
+    {
+      title: "Ao vivo",
+      videos: [{ id: "1", url: "https://www.youtube.com/embed/U5jtO-JEELw" }],
+    },
   ];
 
   const getCategoryId = (title) => title?.toLowerCase().replace(/\s+/g, "-");
