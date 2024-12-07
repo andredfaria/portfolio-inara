@@ -33,7 +33,7 @@ const ResumePage = props => {
                       alt="Perfil de Inara Angra"
                     />
                   </div>
-                  <h5 className="resume-heading profile-name">Inara Angra</h5>
+                  <h5 className="resume-heading text-white profile-name">Inara Angra</h5>
                   <p>Jornalista & Repórter</p>
                   <ul className="resume-list">
                     <li>
@@ -66,7 +66,7 @@ const ResumePage = props => {
                 </div>
 
                 <div className="education d-none d-lg-block">
-                  <h5 className="resume-heading">Formação</h5>
+                  <h5 className="resume-heading text-white">Formação</h5>
                   <div className="education-item">
                     <p>
                       <a
@@ -108,7 +108,7 @@ const ResumePage = props => {
                 </div>
 
                 <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading">Social</h5>
+                  <h5 className="resume-heading text-white">Social</h5>
                   <ul className="resume-list social-links">
                     <li>
                       <a
@@ -134,7 +134,7 @@ const ResumePage = props => {
                 </div>
 
                 <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading">Curriculo</h5>
+                  <h5 className="resume-heading text-white">Curriculo</h5>
                   <ul className="resume-list social-links">
                     <li>
                       <a
@@ -159,7 +159,7 @@ const ResumePage = props => {
 
               <div className="col-12 col-lg-7 resume-col">
                 <div className="summary">
-                  <h5 className="resume-heading">Resumo Profissional</h5>
+                  <h5 className="resume-heading text-white">Resumo Profissional</h5>
                   <p className="summary-text">
                     23 anos, jornalista, formada pela UNIFAE - Centro
                     Universitário das Faculdades Associadas, em São João da Boa
@@ -173,7 +173,7 @@ const ResumePage = props => {
                   </p>
                 </div>
                 <div className="work-experience-section">
-                  <h5 className="resume-heading">Experiências profissionais</h5>
+                  <h5 className="resume-heading text-white">Experiências profissionais</h5>
 
                   <div className="experience">
                     <div className="experience-title">

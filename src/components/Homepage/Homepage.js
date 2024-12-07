@@ -11,9 +11,6 @@ const Homepage = (props) => {
     { id: "0", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
     { id: "1", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
     { id: "2", url: "https://www.youtube.com/embed/V5npXQRuOak" },
-    { id: "3", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
-    { id: "4", url: "https://www.youtube.com/embed/StQBIoAfAzw" },
-    { id :"5", url: "https://www.youtube.com/embed/kzNyto33AoA" }
   ];
 
   const handleNext = useCallback(() => {

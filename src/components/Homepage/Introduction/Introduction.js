@@ -6,6 +6,7 @@ import inara from "../../../assets/images/inara.jpg";
 import line from "../../../assets/images/introlines.png";
 import tablet from "../../../assets/images/tablet.png";
 import zigzag from "../../../assets/images/zigzag.png";
+import linkedin from "../../../assets/images/linkedin.png";
 import "./_introduction.scss";
 
 const Introduction = (props) => (
@@ -54,9 +55,12 @@ const Introduction = (props) => (
             href="https://www.linkedin.com/in/inaraangra/"
             target="_blank"
             rel="noopener noreferrer"
+            className="linkedin-btn"
           >
-            {" "}
-            <button className="primary-btn">Linkedin</button>
+            <button className="primary-btn">
+              <img src={linkedin} alt="Ícone do LinkedIn" className="linkedin-icon" />
+              Linkedin
+            </button>
           </a>
         </div>
         <img src={zigzag} className="zigzag d-none d-lg-block" alt="zig-zag" />

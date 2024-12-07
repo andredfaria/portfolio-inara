@@ -74,7 +74,11 @@ const TV = () => {
     },
     {
       title: "Ao vivo",
-      videos: [{ id: "1", url: "https://www.youtube.com/embed/U5jtO-JEELw" }],
+      videos: [
+        { id: "1", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
+        { id: "2", url: "https://www.youtube.com/embed/F2MriBvGAvo" },
+        { id: "3", url: "https://www.youtube.com/embed/pacSJMHakMo" }
+      ],
     },
   ];
 

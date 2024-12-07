@@ -118,3 +118,29 @@
       width: 197px;
     }
   }
+
+  .linkedin-btn {
+    text-decoration: none;
+  }
+  
+  .primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0077b5; 
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .linkedin-icon {
+    width: 100%; 
+    height:  100%;
+  }
+  
+  .primary-btn:hover {
+    background-color: #005582;
+  }
