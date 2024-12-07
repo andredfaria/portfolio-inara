@@ -39,11 +39,15 @@ cd portifolio-inara
 npm install
 # ou
 yarn install
+# ou
+bun install
 ```
 
 4. Inicie o servidor de desenvolvimento
 ```bash
 npm start
+# ou
+yarn start
 # ou
 yarn start
 ```
@@ -125,9 +129,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👩‍💻 Autor
 
 Desenvolvido por [André de Faria Carvalho](https://github.com/andredfaria)
-
-## 📫 Contato
-
-- Email: adfariacarvalho@gmail.com
-- LinkedIn: [Linkedin](https://linkedin.com/in/andre-de-faria)
-- Website: [Site]](https://andredfaria.github.io/)
