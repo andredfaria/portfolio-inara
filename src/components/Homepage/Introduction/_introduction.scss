@@ -135,6 +135,19 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .aovivo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
   .linkedin-icon {
     width: 100%; 
