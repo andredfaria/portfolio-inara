@@ -1,0 +1,145 @@
+.video-carousel {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9 Aspect ratio
+  background-color: #000;
+}
+
+.carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+  }
+}
+
+.carousel-indicators {
+  bottom: 1rem;
+  z-index: 2;
+
+  button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+    margin: 0 5px !important;
+    border: none !important;
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: #fff !important;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 2;
+
+  &:hover {
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  transition: all 0.3s ease;
+}
+
+.about-me-heading {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 58px;
+    border-bottom: solid 5px #8247E5;
+    position: absolute;
+    left: 0px;
+    bottom: -7px;
+    z-index: 1;
+  }
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+/* Estilos padrão para botões de controle do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+  /* Para garantir que eles fiquem acima do conteúdo */
+}
+
+/* Estilos para o ícone */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px;
+  /* Tamanho do ícone */
+  height: 30px;
+  /* Tamanho do ícone */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 576px) {
+
+  /* Estilos aplicados a telas menores que 576px */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    /* Largura do botão */
+    height: 50px;
+    /* Altura do botão */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 40px;
+    /* Tamanho do ícone maior para melhor acessibilidade */
+    height: 40px;
+    /* Tamanho do ícone maior para melhor acessibilidade */
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+    /* Ajuste a posição do botão esquerdo */
+  }
+
+  .carousel-control-next {
+    right: 10px;
+    /* Ajuste a posição do botão direito */
+  }
+}
