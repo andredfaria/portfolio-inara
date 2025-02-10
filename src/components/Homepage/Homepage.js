@@ -9,8 +9,9 @@ import Introduction from "./Introduction/Introduction";
 const Homepage = (props) => {
   const videos = [
     { id: "0", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
-    { id: "1", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
-    { id: "2", url: "https://www.youtube.com/embed/V5npXQRuOak" },
+    { id: "1", url: "https://www.youtube.com/embed/_r60sWNjf7c" },
+    { id: "2", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
+    { id: "3", url: "https://www.youtube.com/embed/V5npXQRuOak" },
   ];
 
   const handleNext = useCallback(() => {
