@@ -8,11 +8,12 @@ const BlogPage = () => {
   const posts = [
     {
       id: 1,
-      slug: "jornalismo-digital-transformacao",
-      title: "A Transformação Digital no Jornalismo",
-      autor: "-",
-      summary: `O jornalismo passou por uma verdadeira revolução nos últimos anos. Se antes as notícias chegavam até nós pelo jornal impresso, rádio ou TV, hoje a informação circula ...`,
-      image: "https://latamjournalismreview.org/wp-content/uploads/2022/04/Feature-Fake-News-Bill-2.png",
+      slug: "blog-inara",
+      title: "Blog Inara",
+      autor: "Inara Angra",
+      summary: `...`,
+      image:
+        "https://ageimagem.com.br/wp-content/uploads/2023/11/Foto-768x474.png",
       date: "2025-02-11",
     },
     // Add more posts here
