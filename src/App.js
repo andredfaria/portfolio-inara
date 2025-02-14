@@ -6,8 +6,8 @@ import "./assets/scss/style.scss";
 import Homepage from "./components/Homepage/Homepage";
 import ResumePage from "./components/ResumePage/ResumePage";
 import TV from "./components/TV/TVPage";
-import BlogPage from "./components/Blog/BlogPage";
-import BlogPost from "./components/Blog/BlogPost";
+import BlogPage from "./../src/components/Blog/BlogPage.js";
+import BlogPost from "./../src/components/Blog/BlogPost.js";
 
 function App(props) {
   return (
