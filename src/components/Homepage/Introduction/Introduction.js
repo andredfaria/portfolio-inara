@@ -6,8 +6,8 @@ import inara from "../../../assets/images/inara.jpg";
 import line from "../../../assets/images/introlines.png";
 import tablet from "../../../assets/images/tablet.png";
 import zigzag from "../../../assets/images/zigzag.png";
-import linkedin from "../../../assets/images/linkedin.png";
-import instagram from "../../../assets/images/instagram.png";
+// import linkedin from "../../../assets/images/linkedin.png";
+// import instagram from "../../../assets/images/instagram.png";
 import aovivo from "../../../assets/images/aovivo.png";
 import "./_introduction.scss";
 
@@ -85,7 +85,7 @@ const Introduction = (props) => {
               Reportagens e Assessoria de Comunicação. Me considero focada,
               curiosa e adaptável. E sou apaixonada por turismo e cultura.
             </p>
-            <a
+            {/* <a
               href="https://www.linkedin.com/in/inaraangra/"
               target="_blank"
               rel="noopener noreferrer"
@@ -114,9 +114,9 @@ const Introduction = (props) => {
                 />
                 Instagram
               </button>
-            </a>
+            </a> */}
             {
-              isLive && (
+              false && isLive && (
             <a
               href="https://www.bandfmpocos.com.br/"
               target="_blank"

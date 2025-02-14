@@ -33,7 +33,9 @@ const ResumePage = props => {
                       alt="Perfil de Inara Angra"
                     />
                   </div>
-                  <h5 className="resume-heading text-white profile-name">Inara Angra</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200 profile-name">
+                    Inara Angra
+                  </h5>
                   <p>Jornalista & Repórter</p>
                   <ul className="resume-list">
                     <li>
@@ -54,6 +56,14 @@ const ResumePage = props => {
                         rel="noopener noreferrer"
                       >
                         TV Plan
+                      </a>{" "}
+                      |{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.bandfmpocos.com.br/"
+                      >
+                        BAND FM
                       </a>
                     </li>
                     <li>
@@ -66,7 +76,9 @@ const ResumePage = props => {
                 </div>
 
                 <div className="education d-none d-lg-block">
-                  <h5 className="resume-heading text-white">Formação</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
+                    Formação
+                  </h5>
                   <div className="education-item">
                     <p>
                       <a
@@ -108,7 +120,9 @@ const ResumePage = props => {
                 </div>
 
                 <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading text-white">Social</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
+                    Social
+                  </h5>
                   <ul className="resume-list social-links">
                     <li>
                       <a
@@ -134,7 +148,9 @@ const ResumePage = props => {
                 </div>
 
                 <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading text-white">Curriculo</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
+                    Curriculo
+                  </h5>
                   <ul className="resume-list social-links">
                     <li>
                       <a
@@ -159,7 +175,9 @@ const ResumePage = props => {
 
               <div className="col-12 col-lg-7 resume-col">
                 <div className="summary">
-                  <h5 className="resume-heading text-white">Resumo Profissional</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
+                    Resumo Profissional
+                  </h5>
                   <p className="summary-text">
                     23 anos, jornalista, formada pela UNIFAE - Centro
                     Universitário das Faculdades Associadas, em São João da Boa
@@ -173,7 +191,9 @@ const ResumePage = props => {
                   </p>
                 </div>
                 <div className="work-experience-section">
-                  <h5 className="resume-heading text-white">Experiências profissionais</h5>
+                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
+                    Experiências profissionais
+                  </h5>
 
                   <div className="experience">
                     <div className="experience-title">
@@ -194,6 +214,31 @@ const ResumePage = props => {
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
                         Julho, 2023 - Até o momento
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="experience">
+                    <div className="experience-title">
+                      <span className="experience-text">
+                        <a href="https://www.bandfmpocos.com.br/">
+                          BAND FM - Poços de Caldas
+                        </a>
+                      </span>
+                      <span className="remote">Presencial</span>
+                    </div>
+                    <div className="experience-detail">
+                      <div className="experience-detail-item">
+                        <img src={school} alt="" />
+                        Produtora e Apresentadora do Manhã Show
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={location} alt="" />
+                        Poços de Caldas, MG
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={calender} alt="" />
+                        Janeiro, 2025 - Até o momento
                       </div>
                     </div>
                   </div>
