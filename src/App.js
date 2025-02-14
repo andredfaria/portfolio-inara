@@ -6,8 +6,8 @@ import "./assets/scss/style.scss";
 import Homepage from "./components/Homepage/Homepage";
 import ResumePage from "./components/ResumePage/ResumePage";
 import TV from "./components/TV/TVPage";
-import BlogPage from "./../src/components/Blog/BlogPage.js";
-// import BlogPost from "./../src/components/Blog/BlogPost.js";
+import BlogPage from "./BlogPage.js";
+import BlogPost from "./BlogPost";
 
 function App(props) {
   return (
@@ -17,7 +17,7 @@ function App(props) {
         <Route path="curriculo" element={<ResumePage />} />
         <Route path="televisao" element={<TV />} />
         <Route path="blog" element={<BlogPage />} />
-        {/* <Route path="blog/:slug" element={<BlogPost />} /> */}
+        <Route path="blog/:slug" element={<BlogPost />} />
       </Routes>
     </div>
   );
