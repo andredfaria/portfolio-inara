@@ -103,7 +103,7 @@ portifolio-inara/
 - `npm start` - Inicia o servidor
 - `npm build` - Gera a versão de produção
 - `npm test` - Executa os testes
-- `npm eject` - Ejeta as configurações do Create React App
+- `npm eject` - Ejeta as configurações do Create React App 
 
 ## 🔧 Configuração do EmailJS
 
