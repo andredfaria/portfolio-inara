@@ -43,45 +43,21 @@ const TV = () => {
 
   const videos = [
     {
-      title: "Materias - Prestação de Serviço",
+      title: "Reportagens",
       videos: [
-        { id: "1", url: "https://www.youtube.com/embed/RCLVevPL8hE" },
-        { id: "2", url: "https://www.youtube.com/embed/3chW8DoALhM" },
-        { id: "3", url: "https://www.youtube.com/embed/y_VjWy7ZFLw" },
-        { id: "4", url: "https://www.youtube.com/embed/6LQxd8BbzIU" },
-        { id: "5", url: "https://www.youtube.com/embed/kzNyto33AoA" },
+        { id: "1", url: "https://www.youtube.com/embed/LBNR7DL4C8M" },
+        { id: "2", url: "https://www.youtube.com/embed/t_AcyevhHD4" },
+        { id: "3", url: "https://www.youtube.com/embed/vleqBdvoHzI" },
+        { id: "4", url: "https://www.youtube.com/embed/V5nXqtE9lOY" },
+        { id: "4", url: "https://www.youtube.com/embed/P_BhUbcYYno" },
       ],
     },
     {
-      title: "Materias - Cultura e Entretenimento",
+      title: "TV e Radio",
       videos: [
-        { id: "5", url: "https://www.youtube.com/embed/sSrVd0qm2zU" },
-        { id: "6", url: "https://www.youtube.com/embed/Imaw6VNfG1c" },
-        { id: "7", url: "https://www.youtube.com/embed/DDbHcsE52jQ" },
-        { id: "8", url: "https://www.youtube.com/embed/DVMNvDm4aMU" },
-      ],
-    },
-    {
-      title: "Materias - Policial",
-      videos: [
-        { id: "13", url: "https://www.youtube.com/embed/bSb5WzBSwTU" },
-        { id: "14", url: "https://www.youtube.com/embed/-Bkwuy_nRBg" },
-      ],
-    },
-    {
-      title: "Materias - Esporte",
-      videos: [
-        { id: "19", url: "https://www.youtube.com/embed/gWSd68qov7w" },
-        { id: "20", url: "https://www.youtube.com/embed/KrIQRWXRotM" },
-        { id: "21", url: "https://www.youtube.com/embed/V5npXQRuOak" },
-      ],
-    },
-    {
-      title: "Ao vivo",
-      videos: [
-        { id: "1", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
-        { id: "2", url: "https://www.youtube.com/embed/F2MriBvGAvo" },
-        { id: "3", url: "https://www.youtube.com/embed/pacSJMHakMo" }
+        { id: "6", url: "https://www.youtube.com/embed/F2MriBvGAvo" },
+        { id: "7", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
+        { id: "8", url: "https://www.youtube.com/embed/pacSJMHakMo" },
       ],
     },
   ];
@@ -178,23 +154,22 @@ const TV = () => {
         <section
           key={category.title}
           id={getCategoryId(category.title)}
-          className="intro container section-spacing"
+          className="intro container section-spacing position-relative"
         >
-          <div className="row">
-            <div className="col-12">
-              <div className="section-heading">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <div className="section-heading text-center">
                 <h4 className="about-me-heading">{category.title}</h4>
               </div>
               <VideoCarousel category={category} />
             </div>
           </div>
-          {["Prestação de Serviço", "Policial", "Esporte"].includes(
-            category.title
-          ) && (
+          {["Reportagens", "TV e Radio"].includes(category.title) && (
             <img
               className="square-dots dots-img d-none d-lg-block"
               src={dotsSquare}
               alt="dots-sq"
+              style={{ position: 'absolute', right: 0, bottom: '10%' }}
             />
           )}
         </section>

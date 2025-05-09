@@ -140,7 +140,7 @@ const Header = props => {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to={`${routes.homepage}blog`}
                 className="nav-link"
@@ -148,7 +148,7 @@ const Header = props => {
               >
                 Blog
               </Link>
-            </li>
+            </li> */}
 
             <li className="nav-item left d-none d-lg-block">
               <img

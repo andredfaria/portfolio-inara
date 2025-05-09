@@ -179,21 +179,38 @@ const ResumePage = props => {
                     Resumo Profissional
                   </h5>
                   <p className="summary-text">
-                    23 anos, jornalista, formada pela UNIFAE - Centro
-                    Universitário das Faculdades Associadas, em São João da Boa
-                    Vista - SP. E buscando expandir horizontes com a segunda
-                    graduação, em Publicidade e Propaganda (EAD). Possuo
-                    experiência como repórter em diversas editorias do
-                    jornalismo, e passagem rápida como copywriter, além de
-                    acumular estágios em Produção de TV, Reportagens e
-                    Assessoria de Comunicação. Me considero focada, curiosa e
-                    adaptável. E sou apaixonada por turismo e cultura.
+                    Com experiência como repórter e apresentadora, já atuei em diversos formatos jornalísticos, do policial ao entretenimento. Ao longo de dois anos na TV Plan, afiliada da TV Brasil, produzi e apresentei reportagens, entradas ao vivo, conteúdos especiais e o quadro Agenda Cultural. Também apresentei os programas Plantão 47 e 60 Minutos, além de, em alguns momentos, assumir interinamente a direção de jornalismo.
                   </p>
                 </div>
                 <div className="work-experience-section">
                   <h5 className="resume-heading text-gray-800 dark:text-gray-200">
                     Experiências profissionais
                   </h5>
+
+                  <div className="experience">
+                    <div className="experience-title">
+                      <span className="experience-text">
+                        <a href="https://www.bandfmpocos.com.br/">
+                          BAND FM - Poços de Caldas
+                        </a>
+                      </span>
+                      <span className="remote">Presencial</span>
+                    </div>
+                    <div className="experience-detail">
+                      <div className="experience-detail-item">
+                        <img src={school} alt="" />
+                        Produtora e Apresentadora do Manhã Show e Happy Hour
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={location} alt="" />
+                        Poços de Caldas, MG
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={calender} alt="" />
+                        Janeiro, 2025 - Até o momento
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="experience">
                     <div className="experience-title">
@@ -214,31 +231,6 @@ const ResumePage = props => {
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
                         Julho, 2023 - Até o momento
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://www.bandfmpocos.com.br/">
-                          BAND FM - Poços de Caldas
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Produtora e Apresentadora do Manhã Show
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Janeiro, 2025 - Até o momento
                       </div>
                     </div>
                   </div>

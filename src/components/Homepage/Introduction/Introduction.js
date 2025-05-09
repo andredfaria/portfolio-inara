@@ -73,17 +73,12 @@ const Introduction = (props) => {
           <div className="intro-text-box">
             <h1>Inara Angra</h1>
             <p className="sub-text">
-              Jornalista | Repórter | Apresentadora | Produtora
+              Repórter | Apresentadora | Produtora | Radialista
             </p>
             <p className="description desc" style={{ color: "#969696" }}>
-              23 anos, jornalista, formada pela UNIFAE - Centro Universitário
-              das Faculdades Associadas, em São João da Boa Vista - SP. E
-              buscando expandir horizontes com a segunda graduação, em
-              Publicidade e Propaganda (EAD). Possuo experiência como repórter
-              em diversas editorias do jornalismo, e passagem rápida como
-              copywriter, além de acumular estágios em Produção de TV,
-              Reportagens e Assessoria de Comunicação. Me considero focada,
-              curiosa e adaptável. E sou apaixonada por turismo e cultura.
+            Jornalista, 24 anos, e estudante de Publicidade e Propaganda. Graduada em Jornalismo pela UNIFAE, em São João da Boa Vista (SP).
+Há dois anos, atuo como repórter na TV Plan, afiliada da TV Brasil, em Poços de Caldas (MG), onde também assino reportagens especiais e entradas ao vivo, e, ocasionalmente, assumo a função de diretora de jornalismo interina. Paralelamente, desenvolvo meu trabalho no rádio como apresentadora dos programas “Manhã Show”, das 9h às 11h, e “Happy Hour”, das 16h30 às 18h, ambos na Band FM Poços de Caldas.
+Sou curiosa, comprometida e com facilidade para me adaptar a diferentes formatos e linguagens da comunicação.
             </p>
             {/* <a
               href="https://www.linkedin.com/in/inaraangra/"
