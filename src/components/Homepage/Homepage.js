@@ -2,9 +2,9 @@
 import React, { Fragment, useCallback, useEffect } from "react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
-import AboutMe from "./AboutMe/AboutMe";
+import AboutMe from "./AboutMe";
 import "./Home.scss";
-import Introduction from "./Introduction/Introduction";
+import Introduction from "./Introduction";
 
 const Homepage = (props) => {
   const videos = [
