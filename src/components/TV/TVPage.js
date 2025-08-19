@@ -8,40 +8,36 @@ import InstagramPost from "./InstagramEmbed";
 const TV = () => {
   const posts = [
       {
-      id: "0",
+      id: "1",
       url: "DKAbF-KxEMg",
     },
     {
-      id: "1",
-      url: "C_qJl8CJpuQ",
-    },
-    {
       id: "2",
-      url: "C_8sXEvpvtl",
+      url: "DGqOCg2utBS",
     },
     {
       id: "3",
-      url: "DAMlUDtpTTe",
+      url: "C_qJl8CJpuQ",
     },
     {
       id: "4",
-      url: "DAeA5n0pDDk",
+      url: "C_8sXEvpvtl",
     },
     {
       id: "5",
-      url: "DAvraUWpo5d",
+      url: "DAMlUDtpTTe",
     },
     {
       id: "6",
-      url: "DBB-0VFpJRp",
+      url: "DAeA5n0pDDk",
     },
     {
       id: "7",
-      url: "DBmo0A-J2GB",
+      url: "DAvraUWpo5d",
     },
     {
       id: "8",
-      url: "DFiQ74JJlH5",
+      url: "DBB-0VFpJRp",
     },
   ];
 
