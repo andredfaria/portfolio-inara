@@ -190,6 +190,32 @@ const ResumePage = props => {
                   <div className="experience">
                     <div className="experience-title">
                       <span className="experience-text">
+                        <a href="https://redemais.tv.br/">
+                          Rede Mais/Record
+                        </a>
+                      </span>
+                      <span className="remote">Presencial</span>
+                    </div>
+                    <div className="experience-detail">
+                      <div className="experience-detail-item">
+                        <img src={school} alt="" />
+                        Produtora Multimídia
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={location} alt="" />
+                        Varginha, MG
+                      </div>
+                      <div className="experience-detail-item">
+                        <img src={calender} alt="" />
+                        Julho, 2025 - Até o momento
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div className="experience">
+                    <div className="experience-title">
+                      <span className="experience-text">
                         <a href="https://www.bandfmpocos.com.br/">
                           BAND FM - Poços de Caldas
                         </a>
@@ -207,7 +233,7 @@ const ResumePage = props => {
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
-                        Janeiro, 2025 - Até o momento
+                        Janeiro, 2025 - Julho, 2025
                       </div>
                     </div>
                   </div>
@@ -230,7 +256,7 @@ const ResumePage = props => {
                       </div>
                       <div className="experience-detail-item">
                         <img src={calender} alt="" />
-                        Julho, 2023 - Até o momento
+                        Julho, 2023 - Julho, 2025
                       </div>
                     </div>
                   </div>
