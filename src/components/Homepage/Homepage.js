@@ -8,9 +8,11 @@ import Introduction from "./Introduction";
 
 const Homepage = (props) => {
   const videos = [
-    { id: "0", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
-    { id: "1", url: "https://www.youtube.com/embed/-GsURKTB3Ok" },
-    { id: "2", url: "https://www.youtube.com/embed/DEp5_WmpfvU" },
+    { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o" },
+    { id: "1", url: "https://www.youtube.com/embed/FP4RJy8vsGI" },
+    { id: "2", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
+    { id: "3", url: "https://www.youtube.com/embed/-GsURKTB3Ok" },
+    { id: "4", url: "https://www.youtube.com/embed/DEp5_WmpfvU" },
   ];
 
   const handleNext = useCallback(() => {
