@@ -45,11 +45,13 @@ const TV = () => {
     {
       title: "Reportagens",
       videos: [
-        { id: "1", url: "https://www.youtube.com/embed/LBNR7DL4C8M" },
-        { id: "2", url: "https://www.youtube.com/embed/t_AcyevhHD4" },
-        { id: "3", url: "https://www.youtube.com/embed/vleqBdvoHzI" },
-        { id: "4", url: "https://www.youtube.com/embed/V5nXqtE9lOY" },
-        { id: "4", url: "https://www.youtube.com/embed/P_BhUbcYYno" },
+        { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o" },
+        { id: "1", url: "https://www.youtube.com/embed/XOiIUgW5-_o" },
+        { id: "2", url: "https://www.youtube.com/embed/LBNR7DL4C8M" },
+        { id: "3", url: "https://www.youtube.com/embed/t_AcyevhHD4" },
+        { id: "4", url: "https://www.youtube.com/embed/vleqBdvoHzI" },
+        { id: "5", url: "https://www.youtube.com/embed/V5nXqtE9lOY" },
+        { id: "6", url: "https://www.youtube.com/embed/P_BhUbcYYno" },
       ],
     },
     {
