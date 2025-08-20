@@ -36,7 +36,7 @@ const ResumePage = props => {
                   <h5 className="resume-heading text-gray-800 dark:text-gray-200 profile-name">
                     Inara Angra
                   </h5>
-                  <p>Jornalista & Repórter</p>
+                  <p>Jornalista</p>
                   <ul className="resume-list">
                     <li>
                       <img src={inbox} alt="Email" />
@@ -46,25 +46,17 @@ const ResumePage = props => {
                     </li>
                     <li>
                       <img src={location} alt="Localização" />
-                      Poços de Caldas, Minas Gerais, Brasil
+                      Varginha, Minas Gerais, Brasil
                     </li>
                     <li>
                       <img src={art} alt="Website" />
                       <a
-                        href="https://tvplan.com.br/"
+                        href="https://redemais.tv.br/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        TV Plan
+                        Rede Mais | Record
                       </a>{" "}
-                      |{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.bandfmpocos.com.br/"
-                      >
-                        BAND FM
-                      </a>
                     </li>
                     <li>
                       <img src={inbox} alt="Telefone" />
@@ -82,25 +74,6 @@ const ResumePage = props => {
                   <div className="education-item">
                     <p>
                       <a
-                        href="https://www.unicesumar.edu.br/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        UNICESUMAR
-                      </a>
-                    </p>
-                    <div className="eduAndSchool">
-                      <img src={school} alt="Curso" />
-                      Comunicação Social com ênfase em Publicidade e Propaganda
-                    </div>
-                    <div className="eduAndSchool">
-                      <img src={calender} alt="Data" />
-                      Janeiro, 2023 - Até o momento
-                    </div>
-                  </div>
-                  <div className="education-item">
-                    <p>
-                      <a
                         href="https://unifae.edu.br/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -115,6 +88,25 @@ const ResumePage = props => {
                     <div className="eduAndSchool">
                       <img src={calender} alt="Data" />
                       Janeiro, 2019 - Dezembro, 2022
+                    </div>
+                  </div>
+                  <div className="education-item">
+                    <p>
+                      <a
+                        href="https://www.unicesumar.edu.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        UNICESUMAR
+                      </a>
+                    </p>
+                    <div className="eduAndSchool">
+                      <img src={school} alt="Curso" />
+                      Comunicação Social com ênfase em Publicidade e Propaganda
+                    </div>
+                    <div className="eduAndSchool">
+                      <img src={calender} alt="Data" />
+                      Janeiro, 2023 - Até o momento
                     </div>
                   </div>
                 </div>
@@ -154,12 +146,45 @@ const ResumePage = props => {
                   <ul className="resume-list social-links">
                     <li>
                       <a
-                        className="download"
-                        href="https://inaraangra.vercel.app/inara.pdf"
+                        href="https://inaraangra.com.br/InaraAngra-Jornalista.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="portfolio-btn primary-btn"
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "12px 28px",
+                          backgroundColor: "#8247E5",
+                          color: "white",
+                          textDecoration: "none",
+                          borderRadius: "5px",
+                          fontWeight: "400",
+                          fontSize: "12px",
+                          letterSpacing: "1.1px",
+                          transition: "all 0.3s ease",
+                          boxShadow: "0 4px 15px rgba(130, 71, 229, 0.3)",
+                          border: "none",
+                          outline: "none",
+                          cursor: "pointer",
+                          fontFamily: "Poppins"
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = "#6a3bc7";
+                          e.target.style.transform = "translateY(-2px)";
+                          e.target.style.boxShadow = "0 6px 20px rgba(130, 71, 229, 0.4)";
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = "#8247E5";
+                          e.target.style.transform = "translateY(0)";
+                          e.target.style.boxShadow = "0 4px 15px rgba(130, 71, 229, 0.3)";
+                        }}
                       >
-                        <img src={download} alt="Download CV" />
+                        <img 
+                          src={download} 
+                          alt="Download CV" 
+                          style={{ filter: "brightness(0) invert(1)" }}
+                        />
                         Download PDF
                       </a>
                     </li>
@@ -179,7 +204,9 @@ const ResumePage = props => {
                     Resumo Profissional
                   </h5>
                   <p className="summary-text">
-                    Com experiência como repórter e apresentadora, já atuei em diversos formatos jornalísticos, do policial ao entretenimento. Ao longo de dois anos na TV Plan, afiliada da TV Brasil, produzi e apresentei reportagens, entradas ao vivo, conteúdos especiais e o quadro Agenda Cultural. Também apresentei os programas Plantão 47 e 60 Minutos, além de, em alguns momentos, assumir interinamente a direção de jornalismo.
+                    Atualmente, atuo como Produtora Multimídia na Rede Mais | Record TV, em Varginha (MG), fazendo entradas ao vivo, reportagens e produção. <br />
+                    Tenho experiência nas áreas de televisão e rádio, com passagem pelo Grupo Cioffi de Comunicação. No grupo, fui apresentadora dos programas “Manhã Show” e “Happy Hour”, na Band FM de Poços de Caldas. Já na TV Plan, afiliada da TV Brasil, atuei em várias funções, como: repórter, apresentadora, produtora, gestora de redes sociais e, em alguns períodos, como diretora de jornalismo. <br />
+                    Também acumulo experiências anteriores em estágios nas áreas de TV e assessoria de comunicação.
                   </p>
                 </div>
                 <div className="work-experience-section">
@@ -191,7 +218,7 @@ const ResumePage = props => {
                     <div className="experience-title">
                       <span className="experience-text">
                         <a href="https://redemais.tv.br/">
-                          Rede Mais/Record
+                          Rede Mais / Record
                         </a>
                       </span>
                       <span className="remote">Presencial</span>

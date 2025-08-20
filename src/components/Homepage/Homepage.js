@@ -35,6 +35,7 @@ const Homepage = (props) => {
     <Fragment>
       <Header />
       <Introduction />
+      <AboutMe />
       <section id="intro" className="intro container section-spacing">
         <div className="container">
           <div className="row justify-content-center">
@@ -114,7 +115,6 @@ const Homepage = (props) => {
           </div>
         </div>
       </section>
-      <AboutMe />
       <Footer />
     </Fragment>
   );

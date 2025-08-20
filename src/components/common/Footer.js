@@ -30,38 +30,38 @@ const Footer = () => {
 
 const ContactForm = () => {
   return (
-    <section id="intro" className=" container-fluid">
+    <section id="intro" className="container-fluid" style={{ width: "100%", maxWidth: "100%" }}>
       <div className="aboutMe">
         <div className="card-body">
           <SocialIcons />
           <form
-            className=" aboutMe mt-4"
+            className="mt-4"
             target="_blank"
             action="https://formsubmit.co/inaraangra@hotmail.com"
             method="POST"
           >
-            <div className=" aboutMe mb-3">
+            <div className="mb-3">
               <input
                 type="text"
                 name="name"
-                className=" aboutMe form-control form-control-lg"
+                className="form-control form-control-lg"
                 placeholder="Nome completo"
                 required
               />
             </div>
-            <div className=" aboutMe mb-3">
+            <div className="mb-3">
               <input
                 type="email"
                 name="email"
-                className=" aboutMe form-control form-control-lg"
+                className="form-control form-control-lg"
                 placeholder="Seu e-mail"
                 required
               />
             </div>
-            <div className=" aboutMe mb-4">
+            <div className="mb-4">
               <textarea
                 placeholder="Sua mensagem"
-                className=" aboutMe form-control form-control-lg"
+                className="form-control form-control-lg"
                 name="message"
                 rows="5"
                 required
@@ -69,7 +69,33 @@ const ContactForm = () => {
             </div>
             <button
               type="submit"
-              className="primary-btn btn btn-primary btn-lg w-100"
+              className="portfolio-btn primary-btn"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "12px 28px",
+                backgroundColor: "#8247E5",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "5px",
+                fontWeight: "400",
+                fontSize: "12px",
+                letterSpacing: "1.1px",
+                transition: "all 0.3s ease",
+                border: "none",
+                outline: "none",
+                cursor: "pointer",
+                fontFamily: "Poppins"
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = "#6a3bc7";
+                e.target.style.transform = "translateY(-2px)";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "#8247E5";
+                e.target.style.transform = "translateY(0)";
+              }}
             >
               Enviar um email 📬
             </button>

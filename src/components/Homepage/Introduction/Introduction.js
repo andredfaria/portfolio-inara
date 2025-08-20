@@ -73,69 +73,14 @@ const Introduction = (props) => {
           <div className="intro-text-box">
             <h1>Inara Angra</h1>
             <p className="sub-text">
-              Repórter | Apresentadora | Produtora | Radialista
+              Jornalista | Repórter | Produtora | Apresentadora | Rádio e TV
             </p>
-            <p className="description desc" style={{ color: "#969696" }}>
-            Jornalista, 24 anos, e estudante de Publicidade e Propaganda. Graduada em Jornalismo pela UNIFAE, em São João da Boa Vista (SP).
-Há dois anos, atuo como repórter na TV Plan, afiliada da TV Brasil, em Poços de Caldas (MG), onde também assino reportagens especiais e entradas ao vivo, e, ocasionalmente, assumo a função de diretora de jornalismo interina. Paralelamente, desenvolvo meu trabalho no rádio como apresentadora dos programas “Manhã Show”, das 9h às 11h, e “Happy Hour”, das 16h30 às 18h, ambos na Band FM Poços de Caldas.
-Sou curiosa, comprometida e com facilidade para me adaptar a diferentes formatos e linguagens da comunicação.
+            <p className="description desc" style={{ color: "#969696", textAlign: "justify" }}>
+              Sou jornalista formada pela UNIFAE, em São João da Boa Vista (SP), e atualmente curso Publicidade e Propaganda pela UniCESUMAR (EAD), em busca de expandir conhecimento na comunicação. <br /> <br />
+              Tenho 24 anos e atuo há mais de dois anos na área de televisão, com passagem também pelo rádio. Hoje, trabalho como produtora multimídia na Rede Mais | Record, em Varginha (MG), onde faço reportagens, entradas ao vivo e produção. Também tenho experiência com edições simples para redes sociais, principalmente vídeos voltados ao Instagram. <br />
+               <br />
+              Sou uma pessoa curiosa e adaptável. Neste portfólio, será possível conhecer um pouco do meu trabalho ao longo dos últimos anos.
             </p>
-            {/* <a
-              href="https://www.linkedin.com/in/inaraangra/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="linkedin-btn"
-            >
-              <button className="primary-btn">
-                <img
-                  src={linkedin}
-                  alt="Ícone do LinkedIn"
-                  className="linkedin-icon"
-                />
-                Linkedin
-              </button>
-            </a>
-            <a
-              href="https://www.instagram.com/inaraangra/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="instagram-btn pt-2"
-            >
-              <button className="primary-btn">
-                <img
-                  src={instagram}
-                  alt="Ícone do instagram"
-                  className="instagram-icon"
-                />
-                Instagram
-              </button>
-            </a> */}
-            {
-              false && isLive && (
-            <a
-              href="https://www.bandfmpocos.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ao-vivo-btn pt-2"
-            >
-              <button
-                className="primary-btn"
-                disabled={!isLive}
-                onClick={handleAovivoClick}
-                title={
-                  !isLive
-                    ? "Disponível apenas das 9h às 11h de segunda a sexta."
-                    : ""
-                }
-              >
-                <img
-                  src={aovivo}
-                  alt="Ícone do aovivo"
-                  className="aovivo-icon"
-                />
-                Ouvir ao vivo Manhã Show
-              </button>
-            </a>)}
           </div>
           <img
             src={zigzag}

@@ -127,3 +127,142 @@
     padding: 3rem;
   }
 }
+
+// Estilos específicos para o formulário de contato
+.aboutMe {
+  background-color: var(--background-color);
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  .card-body {
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  form {
+    .form-control {
+      background-color: var(--background-color);
+      border: 1px solid #4a4a4a;
+      border-radius: 8px;
+      color: var(--main-heading);
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 1.1px;
+      padding: 16px 20px;
+      transition: all 0.3s ease;
+      margin-bottom: 1.5rem;
+
+      &::placeholder {
+        color: var(--sub-heading);
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 1.1px;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #8247E5;
+        background-color: var(--background-color);
+      }
+
+      &:hover {
+        border-color: #8247E5;
+      }
+    }
+
+    .form-control-lg {
+      font-size: 18px;
+      padding: 18px 22px;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 1.5rem;
+      font-family: Poppins;
+      font-weight: 400;
+      letter-spacing: 1.1px;
+      font-size: 14px;
+      padding: 16px 32px;
+      background-color: #8247E5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #6a3bc7;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Estilos para os ícones sociais
+.d-flex.justify-content-center {
+  margin-bottom: 2rem;
+
+  .social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: transform 0.3s ease;
+    margin: 0 0.5rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Responsividade para o formulário
+@media only screen and (max-width: 768px) {
+  .aboutMe {
+    padding: 2rem 1rem;
+    margin: 0;
+
+    .card-body {
+      max-width: 100%;
+    }
+
+    form {
+      .form-control {
+        font-size: 16px;
+        padding: 14px 18px;
+      }
+
+      .form-control-lg {
+        font-size: 16px;
+        padding: 14px 18px;
+      }
+
+      button[type="submit"] {
+        font-size: 14px;
+        padding: 14px 28px;
+      }
+    }
+  }
+
+  .d-flex.justify-content-center {
+    margin-bottom: 2rem;
+
+    .social-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
