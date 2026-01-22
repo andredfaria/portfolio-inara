@@ -73,7 +73,7 @@ const Introduction = (props) => {
           <div className="intro-text-box">
             <h1>Inara Angra</h1>
             <p className="sub-text">
-              Jornalista | Repórter | Produtora | Apresentadora | Rádio e TV
+              Jornalista | Repórter | Produtora | Apresentadora 
             </p>
             <p className="description desc" style={{ color: "#969696", textAlign: "justify" }}>
               Sou jornalista formada pela UNIFAE, em São João da Boa Vista (SP), e atualmente curso Publicidade e Propaganda pela UniCESUMAR (EAD), em busca de expandir conhecimento na comunicação. <br /> <br />
