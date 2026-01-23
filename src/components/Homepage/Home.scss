@@ -1,145 +1,88 @@
-.video-carousel {
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%; // 16:9 Aspect ratio
-  background-color: #000;
+.highlights-section {
+  @apply py-16 md:py-20;
+  @apply bg-background-light;
 }
 
-.carousel-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.video-carousel-wrapper {
+  @apply relative;
 }
 
-.carousel-item {
-  height: 100%;
-
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .video-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    object-fit: cover;
-  }
+.video-wrapper {
+  @apply relative w-full;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
 }
 
-.carousel-indicators {
-  bottom: 1rem;
-  z-index: 2;
+.video-frame {
+  @apply absolute top-0 left-0 w-full h-full;
+  @apply border-0;
+}
+
+// Custom carousel indicators
+.custom-indicators {
+  @apply flex gap-2 justify-center mb-0;
+  position: static !important;
+  margin-top: 1.5rem;
 
   button {
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50%;
-    margin: 0 5px !important;
-    border: none !important;
-    transition: all 0.3s ease;
+    @apply w-2 h-2 rounded-full;
+    @apply bg-border-light;
+    @apply transition-all duration-300;
+    @apply border-0;
+    opacity: 0.5 !important;
 
     &.active {
-      background-color: #fff !important;
-      transform: scale(1.2);
+      @apply bg-accent-purple-500;
+      @apply w-8;
+      opacity: 1 !important;
+    }
+
+    &:hover {
+      @apply bg-accent-purple-400;
+      opacity: 0.8 !important;
     }
   }
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  z-index: 2;
+// Custom carousel controls
+.carousel-control {
+  @apply opacity-0;
+  @apply transition-opacity duration-300;
+  width: auto !important;
 
   &:hover {
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      transform: scale(1.2);
-    }
+    @apply opacity-100;
   }
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  transition: all 0.3s ease;
+.video-carousel-wrapper:hover .carousel-control {
+  @apply opacity-100;
 }
 
-.about-me-heading {
-  position: relative;
+.control-button {
+  @apply flex items-center justify-center;
+  @apply w-12 h-12;
+  @apply rounded-full;
+  @apply bg-white/90 backdrop-blur-sm;
+  @apply border border-border-light;
+  @apply text-text-primary;
+  @apply shadow-glass;
+  @apply transition-all duration-300;
 
-  &::before {
-    content: "";
-    width: 58px;
-    border-bottom: solid 5px #8247E5;
-    position: absolute;
-    left: 0px;
-    bottom: -7px;
-    z-index: 1;
+  &:hover {
+    @apply bg-accent-purple-500 text-white;
+    @apply border-accent-purple-500;
+    @apply shadow-glow-purple;
+    @apply scale-110;
   }
 }
 
-.shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+.carousel-control-prev {
+  justify-content: flex-start;
+  padding-left: 1rem;
 }
 
-/* Estilos padrão para botões de controle do carrossel */
-.carousel-control-prev,
 .carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  z-index: 1000;
-  /* Para garantir que eles fiquem acima do conteúdo */
-}
-
-/* Estilos para o ícone */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 30px;
-  /* Tamanho do ícone */
-  height: 30px;
-  /* Tamanho do ícone */
-}
-
-/* Ajustes para dispositivos móveis */
-@media (max-width: 576px) {
-
-  /* Estilos aplicados a telas menores que 576px */
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 50px;
-    /* Largura do botão */
-    height: 50px;
-    /* Altura do botão */
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 40px;
-    /* Tamanho do ícone maior para melhor acessibilidade */
-    height: 40px;
-    /* Tamanho do ícone maior para melhor acessibilidade */
-  }
-
-  .carousel-control-prev {
-    left: 10px;
-    /* Ajuste a posição do botão esquerdo */
-  }
-
-  .carousel-control-next {
-    right: 10px;
-    /* Ajuste a posição do botão direito */
-  }
+  justify-content: flex-end;
+  padding-right: 1rem;
 }

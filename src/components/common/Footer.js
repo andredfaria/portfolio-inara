@@ -1,160 +1,108 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
 import "./_footer.scss";
-import instagram from "../../assets/images/instagram.png";
-import linkedin from "../../assets/images/linkedin.png";
-import whatsapp from "../../assets/images/whatsapp.png";
 
 const Footer = () => {
   return (
-    <>
-      <section
-        id="intro"
-        className="intro container-fluid section-spacing"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-lg-12 about-text-col">
-              <div className="section-heading">
-                <h4 className="about-me-heading">Entre em contato</h4>
-              </div>
-              <div className="about-text">
-                <ContactForm />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
+    <footer className="premium-footer">
+      <div className="container mx-auto px-4 py-16">
+        {/* Contact Section */}
+        <motion.div
+          className="contact-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h4 className="font-serif text-3xl md:text-4xl font-semibold text-text-primary text-center mb-4">
+            Entre em contato
+          </h4>
+          <div className="h-0.5 w-20 bg-accent-purple-500 mx-auto mb-12"></div>
 
-const ContactForm = () => {
-  return (
-    <section id="intro" className="container-fluid" style={{ width: "100%", maxWidth: "100%" }}>
-      <div className="aboutMe">
-        <div className="card-body">
-          <SocialIcons />
-          <form
-            className="mt-4"
-            target="_blank"
-            action="https://formsubmit.co/inaraangra@hotmail.com"
-            method="POST"
-          >
-            <div className="mb-3">
-              <input
-                type="text"
-                name="name"
-                className="form-control form-control-lg"
-                placeholder="Nome completo"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                name="email"
-                className="form-control form-control-lg"
-                placeholder="Seu e-mail"
-                required
-              />
-            </div>
-            <div className="mb-4">
+          {/* Social Icons */}
+          <div className="social-icons-row">
+            <a
+              href="https://www.instagram.com/inaraangra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
+              aria-label="Instagram"
+            >
+              <IconBrandInstagram className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/inaraangra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
+              aria-label="LinkedIn"
+            >
+              <IconBrandLinkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://wa.me/5535998084624/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
+              aria-label="WhatsApp"
+            >
+              <IconBrandWhatsapp className="w-6 h-6" />
+            </a>
+          </div>
+
+          {/* Contact Form */}
+          <div className="contact-form-wrapper">
+            <form
+              className="contact-form"
+              target="_blank"
+              action="https://formsubmit.co/inaraangra@hotmail.com"
+              method="POST"
+            >
+              <div className="form-row">
+                <input
+                  type="text"
+                  name="name"
+                  className="form-input"
+                  placeholder="Nome completo"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  className="form-input"
+                  placeholder="Seu e-mail"
+                  required
+                />
+              </div>
               <textarea
                 placeholder="Sua mensagem"
-                className="form-control form-control-lg"
+                className="form-textarea"
                 name="message"
                 rows="5"
                 required
               ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="portfolio-btn primary-btn"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                padding: "12px 28px",
-                backgroundColor: "#8247E5",
-                color: "white",
-                textDecoration: "none",
-                borderRadius: "5px",
-                fontWeight: "400",
-                fontSize: "12px",
-                letterSpacing: "1.1px",
-                transition: "all 0.3s ease",
-                border: "none",
-                outline: "none",
-                cursor: "pointer",
-                fontFamily: "Poppins"
-              }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = "#6a3bc7";
-                e.target.style.transform = "translateY(-2px)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = "#8247E5";
-                e.target.style.transform = "translateY(0)";
-              }}
-            >
-              Enviar um email 📬
-            </button>
-          </form>
+              <motion.button
+                type="submit"
+                className="submit-button group"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <IconMail className="w-5 h-5 transition-transform group-hover:rotate-12" />
+                <span>Enviar mensagem</span>
+              </motion.button>
+            </form>
+          </div>
+        </motion.div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <p className="copyright">
+            © {new Date().getFullYear()} Inara Angra. Todos os direitos reservados.
+          </p>
         </div>
       </div>
-    </section>
-  );
-};
-
-const SocialIcons = () => {
-  return (
-    <div className="d-flex justify-content-center">
-      <a
-        href="https://www.instagram.com/inaraangra/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-        className="m-1"
-      >
-        <img
-          src={instagram}
-          alt="Instagram"
-          className="social-icon"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/inaraangra/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        className="m-1"
-      >
-        <img
-          src={linkedin}
-          alt="LinkedIn"
-          className="social-icon"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a
-        href="https://wa.me/553598084624/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="m-1"
-        aria-label="WhatsApp"
-      >
-        <img
-          src={whatsapp}
-          alt="WhatsApp"
-          className="social-icon"
-          width="32"
-          height="32"
-        />
-      </a>
-    </div>
+    </footer>
   );
 };
 

@@ -1,356 +1,282 @@
-.resume {
-  margin-top: 90px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
-  border: 12px solid var(--resume-main-bg);
+.resume-page {
+  @apply bg-background-light min-h-screen;
+  padding-top: 90px;
+}
 
-  .middle {
-    padding: 25px 3px;
+// Profile Card
+.profile-card {
+  @apply bg-white rounded-xl p-8;
+  @apply border border-border-light;
+  @apply shadow-glass;
+  @apply text-center;
+}
 
-    .resume-main {
-      padding: 25px 30px;
-      background-color: var(--resume-main-bg);
+.profile-image-container {
+  @apply mb-6;
+}
 
-      .row .resume-col {
-        padding: 10px 30px;
-      }
-    }
-  }
+.profile-image {
+  @apply w-48 h-48 rounded-full mx-auto object-cover;
+  @apply border-4 border-accent-purple-100;
+  @apply shadow-glass;
 }
 
 .profile-name {
-  font-weight: bold;
+  @apply font-serif text-3xl font-semibold text-text-primary mb-2;
 }
 
-.resume-heading {
-  position: relative;
-  color: var(--main-heading);
-  font-family: Poppins;
-  font-size: 22px;
-  font-weight: 700;
-
-  &::before {
-    content: "";
-    width: 20%;
-    border-bottom: solid 5px #8247E5;
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    z-index: 1;
-  }
-
-  &.profile-name::before {
-    border-bottom: 0;
-  }
+.profile-title {
+  @apply text-text-secondary font-sans text-lg;
 }
 
-.resume-list {
-  list-style-type: none;
-  padding-inline-start: 0;
+.contact-list {
+  @apply flex flex-col gap-3 mt-8 text-left;
+}
 
-  li {
-    margin: 0.3em 0;
-    font-size: 12px;
+.contact-item {
+  @apply flex items-center gap-3;
+  @apply text-text-secondary text-sm;
+  @apply transition-colors duration-300;
 
-    img {
-      margin-right: 10px;
-      width: 13px;
-      height: auto;
-    }
+  &:hover {
+    @apply text-accent-purple-600;
+    text-decoration: none;
   }
 
-  &.social-links {
-    position: relative;
-    z-index: 1;
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    span {
-      color: #6f6d6f;
-      text-decoration: underline;
-    }
+  svg {
+    @apply flex-shrink-0 text-accent-purple-500;
   }
 }
 
-.work-experience-section {
-  margin-top: 50px;
+// Section Cards
+.section-card {
+  @apply bg-white rounded-xl p-6;
+  @apply border border-border-light;
+  @apply shadow-glass;
 }
 
-.experience {
-  padding: 1em;
-  margin: 1em;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+.section-title {
+  @apply font-serif text-2xl font-semibold text-text-primary mb-6;
+  @apply relative pb-3;
 
-  .experience-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-
-    .experience-text {
-      font-size: 16px;
-      font-weight: 400;
-      font-family: Poppins;
-      color: var(--paragraph);
-    }
-
-    .remote {
-      background-color: #8247E5;
-      padding: 0.2em 1em;
-      border-radius: 4px;
-      color: white;
-      font-size: 12px;
-      font-weight: bold;
-    }
-  }
-
-.experience-detail {
-  display: flex;
-  flex-direction: column;
-
-  .experience-detail-item {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-
-    img {
-      margin-right: 8px;
-      height: 12px;
-    }
-  }
-}
-}
-
-.summary .summary-text {
-  color: var(--paragraph);
-  font-family: Poppins;
-  margin-top: 16px;
-  font-weight: 300;
-  font-size: 14px;
-}
-
-p,
-li,
-div {
-  color: var(--sub-heading);
-}
-
-.resume-list {
-  list-style-type: none;
-  padding-inline-start: 0;
-
-  li {
-    margin: 10px 0;
-    font-size: 13px;
-
-    img {
-      margin-right: 10px;
-      width: 13px;
-      height: auto;
-    }
-  }
-
-  &.social-links {
-    position: relative;
-    z-index: 1;
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    span {
-      color: #6f6d6f;
-      text-decoration: underline;
-    }
+  &::after {
+    content: '';
+    @apply absolute bottom-0 left-0;
+    @apply w-16 h-0.5;
+    @apply bg-accent-purple-500;
   }
 }
 
-.social,
-.education {
-  margin-top: 50px;
-}
-
+// Education
 .education-item {
-  margin: 25px 0;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
-  padding-bottom: 20px;
+  @apply pb-6 border-b border-border-light last:border-0 last:pb-0;
+}
+
+.education-institution {
+  @apply font-sans font-semibold text-text-primary mb-3 block;
+  @apply transition-colors duration-300;
+
+  &:hover {
+    @apply text-accent-purple-600;
+    text-decoration: none;
+  }
+}
+
+.education-detail {
+  @apply flex items-center gap-2 text-sm text-text-secondary mb-2;
+
+  svg {
+    @apply flex-shrink-0 text-accent-purple-500;
+  }
+}
+
+// Social Links
+.social-links {
+  @apply flex flex-col gap-4;
+}
+
+.social-link {
+  @apply flex items-center gap-3;
+  @apply text-text-secondary font-sans;
+  @apply transition-all duration-300;
+  @apply p-3 rounded-lg;
+  @apply border border-transparent;
+
+  &:hover {
+    @apply text-accent-purple-600;
+    @apply bg-accent-purple-50;
+    @apply border-accent-purple-200;
+    text-decoration: none;
+  }
+
+  svg {
+    @apply flex-shrink-0;
+  }
+}
+
+// Download CV Button
+.download-cv-button {
+  @apply flex items-center justify-center gap-3;
+  @apply w-full py-4 px-6;
+  @apply bg-gradient-to-r from-accent-purple-500 to-accent-purple-600;
+  @apply text-white font-sans font-semibold text-base;
+  @apply rounded-xl;
+  @apply shadow-glow-purple;
+  @apply transition-all duration-300;
+
+  &:hover {
+    @apply shadow-glow-purple-lg;
+    @apply from-accent-purple-600 to-accent-purple-700;
+    text-decoration: none;
+  }
+}
+
+// Summary Card
+.summary-card {
+  @apply bg-white rounded-xl p-8;
+  @apply border border-border-light;
+  @apply shadow-glass;
+}
+
+.summary-text {
+  @apply text-text-secondary font-sans text-base leading-relaxed;
 
   p {
-    margin-bottom: 10px;
+    @apply text-text-secondary;
+  }
+}
+
+// Timeline
+.timeline-section {
+  @apply bg-white rounded-xl p-8;
+  @apply border border-border-light;
+  @apply shadow-glass;
+}
+
+.timeline-container {
+  @apply relative pl-8;
+
+  // Vertical line
+  &::before {
+    content: '';
+    @apply absolute left-0 top-0 bottom-0;
+    @apply w-0.5 bg-border-light;
+  }
+}
+
+.timeline-item {
+  @apply relative mb-8 last:mb-0;
+}
+
+.timeline-marker {
+  @apply absolute left-[-2rem] top-2;
+  @apply w-4 h-4 rounded-full;
+  @apply bg-accent-purple-500;
+  @apply ring-4 ring-white;
+  @apply shadow-glass;
+}
+
+.timeline-content {
+  @apply rounded-lg p-6;
+  @apply border border-border-light;
+  @apply backdrop-blur-sm;
+  @apply transition-all duration-300;
+  background: linear-gradient(to bottom right, white, oklch(95% 0.05 290 / 0.3));
+
+  &:hover {
+    @apply border-accent-purple-200;
+    @apply shadow-glass;
+    transform: translateX(4px);
+  }
+}
+
+.experience-header {
+  @apply flex items-start justify-between gap-4 mb-3;
+  @apply flex-wrap;
+}
+
+.experience-company {
+  @apply font-serif text-xl font-semibold text-text-primary;
+  @apply transition-colors duration-300;
+
+  &:hover {
+    @apply text-accent-purple-600;
+    text-decoration: none;
+  }
+}
+
+.experience-badge {
+  @apply px-3 py-1 rounded-full;
+  @apply text-xs font-semibold uppercase tracking-wide;
+  @apply border;
+  @apply transition-all duration-300;
+}
+
+.badge-presencial {
+  @apply bg-green-50 text-green-700 border-green-200;
+}
+
+.badge-hibrido {
+  @apply bg-blue-50 text-blue-700 border-blue-200;
+}
+
+.badge-remoto {
+  @apply bg-purple-50 text-purple-700 border-purple-200;
+}
+
+.experience-role {
+  @apply font-sans text-base font-medium text-text-primary mb-4;
+}
+
+.experience-meta {
+  @apply flex flex-col gap-2;
+}
+
+.experience-meta-item {
+  @apply flex items-center gap-2;
+  @apply text-sm text-text-secondary;
+
+  svg {
+    @apply flex-shrink-0 text-accent-purple-500;
+  }
+}
+
+.timeline-quote {
+  @apply text-center font-serif text-xl italic text-text-secondary mt-12 pt-8;
+  @apply border-t border-border-light;
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .resume-page {
+    padding-top: 70px;
   }
 
-  .eduAndSchool {
-    font-size: 13px;
+  .profile-card,
+  .section-card,
+  .download-cv-button {
+    @apply mb-6;
+  }
 
-    img {
-      margin-right: 10px;
-      width: 13px;
-      height: auto;
+  aside>div {
+    position: static !important;
+  }
+
+  .timeline-container::before {
+    @apply hidden;
+  }
+
+  .timeline-marker {
+    @apply hidden;
+  }
+
+  .timeline-container {
+    @apply pl-0;
+  }
+
+  .timeline-content {
+    &:hover {
+      transform: none;
     }
   }
-}
-
-.download {
-  background-color: var(--paragraph);
-  border: none;
-  border-radius: 4px;
-  padding: 3px 4px;
-  margin-right: 10px;
-}
-
-.left-bottom-img {
-  position: absolute;
-  bottom: 0;
-  height: 333px;
-}
-
-.profile-image-div {
-  padding: 1em;
-}
-.img-fluid{
-  border-radius: 1em;
-}
-
-@media only screen and (max-width: 991px) {
-  .container.resume {
-    border: none;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-top: 250px;
-
-    .middle {
-      padding: 6px;
-    }
-  }
-
-  .user-personal-info {
-    text-align: center;
-
-    p {
-      font-weight: 400;
-    }
-  }
-
-  .profile-image-div {
-    position: relative;
-
-    img {
-      position: absolute;
-      top: -235px;
-      max-width: 60%;
-      left: 20%;
-    }
-  }
-
-  .resume {
-    margin-top: 113px;
-  }
-
-  .resume-main {
-    padding: 7px !important;
-  }
-
-  .resume-col {
-    padding: 0 !important;
-    padding-top: 112px !important;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
-  }
-
-  .experience {
-    padding-right: 0;
-  }
-
-  .experience-text {
-    font-size: 16px;
-  }
-
-  .remote {
-    padding: 2px 5px !important;
-    font-size: 0.75rem !important;
-  }
-
-  .education-item .eduAndSchool {
-    font-size: 10px !important;
-    padding: 0;
-  }
-
-  .work-experience-section {
-    margin-top: 50px;
-  }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.resume-heading {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.resume-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.resume-list li {
-  margin-bottom: 1rem;
-}
-
-.download {
-  display: flex;
-  align-items: center;
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.download img {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.75rem;
-}
-
-.download:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.download:active {
-  background-color: #004080;
-  transform: translateY(0);
-}
-
-.text-white {
-  color: #fff;
 }

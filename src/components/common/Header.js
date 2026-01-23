@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HamburgerMenu from "react-hamburger-menu";
+import { motion } from "framer-motion";
+import { IconMenu2, IconX, IconMoon, IconSun } from "@tabler/icons-react";
 import * as routes from "../../routePaths";
 import "./_header.scss";
-import dark from "../../assets/images/dark.png";
-import light from "../../assets/images/light.png";
 
-const Header = props => {
+const Header = () => {
   const [show, setShow] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [darkTheme, setDarkTheme] = useState(
     () => JSON.parse(localStorage.getItem("darkTheme")) || false
   );
@@ -15,29 +15,29 @@ const Header = props => {
   const applyTheme = (isDark) => {
     const themeVars = isDark
       ? {
-          "--background-color": "#252525",
-          "--main-heading": "white",
-          "--sub-heading": "#aaa3a3",
-          "--paragraph": "#6d6d6d",
-          "--aboutme-blogs-bg": "#232323",
-          "--companies-click-to-view-bg": "#252525",
-          "--contact-us-bg-img": "linear-gradient(180deg, #232323 0%, #272727 100%)",
-          "--resume-main-bg": "#1B1B1B",
-          "--testimonial": "#2a303b",
-          "--testimonial-shadow": "#2c2e31",
-        }
+        "--background-color": "#252525",
+        "--main-heading": "white",
+        "--sub-heading": "#aaa3a3",
+        "--paragraph": "#6d6d6d",
+        "--aboutme-blogs-bg": "#232323",
+        "--companies-click-to-view-bg": "#252525",
+        "--contact-us-bg-img": "linear-gradient(180deg, #232323 0%, #272727 100%)",
+        "--resume-main-bg": "#1B1B1B",
+        "--testimonial": "#2a303b",
+        "--testimonial-shadow": "#2c2e31",
+      }
       : {
-          "--background-color": "white",
-          "--main-heading": "#1d1d1d",
-          "--sub-heading": "#646464",
-          "--paragraph": "#504f4f",
-          "--aboutme-blogs-bg": "#faf8f8",
-          "--companies-click-to-view-bg": "#ededed",
-          "--contact-us-bg-img": "linear-gradient(180deg, #ededed 0%, #ffffff 100%)",
-          "--resume-main-bg": "#EAEAEA",
-          "--testimonial": "#EFEFEF",
-          "--testimonial-shadow": "#D9D9D9",
-        };
+        "--background-color": "white",
+        "--main-heading": "#1d1d1d",
+        "--sub-heading": "#646464",
+        "--paragraph": "#504f4f",
+        "--aboutme-blogs-bg": "#faf8f8",
+        "--companies-click-to-view-bg": "#ededed",
+        "--contact-us-bg-img": "linear-gradient(180deg, #ededed 0%, #ffffff 100%)",
+        "--resume-main-bg": "#EAEAEA",
+        "--testimonial": "#EFEFEF",
+        "--testimonial-shadow": "#D9D9D9",
+      };
 
     Object.entries(themeVars).forEach(([property, value]) => {
       document.documentElement.style.setProperty(property, value);
@@ -51,102 +51,129 @@ const Header = props => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     applyTheme(darkTheme);
   }, [darkTheme]);
+
   return (
-    <div
-      className="container-fluid header"
-      style={show ? { height: "100vh" } : {}}
-      id="header"
+    <motion.header
+      className={`premium-header ${scrolled ? "scrolled" : ""}`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <nav className="container navbar navbar-expand-lg pr-0 pl-0">
-        <Link to={`${routes.homepage}#home`} className="navbar-brand">
-          Inara Angra
-        </Link>
-        <img
-          className="d-block d-lg-none themeswitcher-mob"
-          src={darkTheme ? light : dark}
-          alt=""
-          onClick={handleTheme}
-          style={{ maxHeight: "25px", cursor: "pointer" }}
-        />
-        <button
-          className={`navbar-toggler ${show}`}
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <HamburgerMenu
-            isOpen={show}
-            menuClicked={() => setShow(!show)}
-            width={20}
-            height={15}
-            strokeWidth={1}
-            rotate={0}
-            color={darkTheme ? "white" : "black"}
-            borderRadius={0}
-            animationDuration={0.5}
-          />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link
-                to={`${routes.homepage}#home`}
-                className="nav-link"
-                style={{ color: "#969696" }}
-              >
+      <nav className="container mx-auto px-4">
+        <div className="nav-content">
+          {/* Logo */}
+          <Link to={`${routes.homepage}#home`} className="logo">
+            <span className="logo-text">Inara Angra</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <ul className="nav-links desktop-nav">
+            <li>
+              <Link to={`${routes.homepage}#home`} className="nav-link">
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to={`${routes.homepage}curriculo`}
-                className="nav-link"
-                style={{ color: "#969696" }}
-              >
-                Curriculo
+            <li>
+              <Link to={`${routes.homepage}curriculo`} className="nav-link">
+                Currículo
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to={`${routes.homepage}televisao`}
-                className="nav-link"
-                style={{ color: "#969696" }}
-              >
-                Portifólio
+            <li>
+              <Link to={`${routes.homepage}televisao`} className="nav-link">
+                Portfólio
               </Link>
             </li>
-
-            {/* <li className="nav-item">
-              <Link
-                to={`${routes.homepage}blog`}
-                className="nav-link"
-                style={{ color: "#969696" }}
-              >
-                Blog
-              </Link>
-            </li> */}
-
-            <li className="nav-item left d-none d-lg-block">
-              <img
-                src={darkTheme ? light : dark}
-                alt=""
+            <li>
+              <button
                 onClick={handleTheme}
-                style={{ maxHeight: "20px", cursor: "pointer" }}
-              />
+                className="theme-toggle"
+                aria-label="Toggle theme"
+              >
+                {darkTheme ? (
+                  <IconSun className="w-5 h-5" />
+                ) : (
+                  <IconMoon className="w-5 h-5" />
+                )}
+              </button>
             </li>
           </ul>
+
+          {/* Mobile Controls */}
+          <div className="mobile-controls">
+            <button
+              onClick={handleTheme}
+              className="theme-toggle mobile"
+              aria-label="Toggle theme"
+            >
+              {darkTheme ? (
+                <IconSun className="w-5 h-5" />
+              ) : (
+                <IconMoon className="w-5 h-5" />
+              )}
+            </button>
+            <button
+              onClick={() => setShow(!show)}
+              className="menu-toggle"
+              aria-label="Toggle menu"
+            >
+              {show ? (
+                <IconX className="w-6 h-6" />
+              ) : (
+                <IconMenu2 className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation */}
+        <motion.ul
+          className="nav-links mobile-nav"
+          initial={false}
+          animate={{ height: show ? "auto" : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <li>
+            <Link
+              to={`${routes.homepage}#home`}
+              className="nav-link"
+              onClick={() => setShow(false)}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`${routes.homepage}curriculo`}
+              className="nav-link"
+              onClick={() => setShow(false)}
+            >
+              Currículo
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`${routes.homepage}televisao`}
+              className="nav-link"
+              onClick={() => setShow(false)}
+            >
+              Portfólio
+            </Link>
+          </li>
+        </motion.ul>
       </nav>
-    </div>
+    </motion.header>
   );
 };
+
 export default Header;

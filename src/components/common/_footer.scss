@@ -1,268 +1,100 @@
-.footer {
-  background-color: var(--background-color); // Usando a mesma cor de fundo que o header
-  padding: 20px 0;
-  position: relative;
-  z-index: 1020; // Para garantir que o footer fique acima de outros elementos se necessário
+.premium-footer {
+  @apply bg-background-light border-t border-border-light;
+}
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
+.contact-section {
+  @apply max-w-3xl mx-auto;
+}
 
-  .footer-text {
-    color: var(--paragraph); // Usando a mesma cor de texto que o header
-    font-family: Poppins; // Usando a mesma fonte que o header
-    font-weight: 400;
-    font-size: 13px; // Ajustado para corresponder ao tamanho da fonte no header
-    text-align: center;
-    margin-top: 15px;
-  }
+// Social Icons
+.social-icons-row {
+  @apply flex items-center justify-center gap-4 mb-12;
+}
 
-  .contact-form {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+.social-icon-link {
+  @apply flex items-center justify-center;
+  @apply w-12 h-12 rounded-full;
+  @apply text-text-secondary;
+  @apply border border-border-light;
+  @apply bg-white;
+  @apply transition-all duration-300;
 
-    h1 {
-      font-size: 1.5rem; // Ajuste o tamanho da fonte conforme necessário
-      margin-bottom: 15px;
-    }
-
-    form {
-      .form-row {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 15px;
-
-        .col {
-          flex: 1;
-          margin-right: 10px;
-
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-      }
-
-      .form-control {
-        border-radius: 4px; // Padronizando com o botão do header
-      }
-
-      .btn-dark {
-        background-color: #8247E5; // Cor do botão correspondente à do header
-        border: none;
-        border-radius: 4px;
-      }
-    }
-  }
-
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    .footer-social-icon {
-      margin-left: 15px;
-
-      img {
-        width: 32px;
-        height: 32px;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
+  &:hover {
+    @apply text-white bg-accent-purple-500 border-accent-purple-500;
+    @apply shadow-glow-purple;
+    @apply scale-110;
+    text-decoration: none;
   }
 }
 
-@media only screen and (max-width: 991px) {
-  .footer {
-    margin-top: 38px; // Ajuste para corresponder ao espaçamento do header
-  }
+// Contact Form
+.contact-form-wrapper {
+  @apply bg-white rounded-xl p-8;
+  @apply border border-border-light;
+  @apply shadow-glass;
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply space-y-6;
 }
 
-.contact-form h1 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+.form-row {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
 }
 
-.footer-social {
-  display: flex;
-  margin-right: 1rem; // Ajuste conforme necessário
+.form-input,
+.form-textarea {
+  @apply w-full px-4 py-3;
+  @apply font-sans text-base;
+  @apply text-text-primary;
+  @apply bg-background-light;
+  @apply border border-border-light;
+  @apply rounded-lg;
+  @apply transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-purple-500 focus:border-transparent;
+
+  &::placeholder {
+    @apply text-text-muted;
+  }
+
+  &:focus {
+    @apply bg-white;
+  }
 }
 
-.footer-social-icon {
-  margin-right: 0.5rem; // Ajuste o espaçamento entre os ícones
+.form-textarea {
+  @apply resize-none;
 }
 
-.footer-social-icon img {
-  width: 24px; // Ajuste o tamanho dos ícones conforme necessário
-  height: 24px;
-}
-
-.social-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  transition: transform 0.3s ease;
+.submit-button {
+  @apply w-full md:w-auto;
+  @apply flex items-center justify-center gap-3;
+  @apply px-8 py-4;
+  @apply bg-accent-purple-500 text-white;
+  @apply font-sans font-semibold text-base;
+  @apply border border-accent-purple-500;
+  @apply rounded-lg;
+  @apply shadow-glow-purple;
+  @apply transition-all duration-300;
 
   &:hover {
-    transform: scale(1.1);
+    @apply bg-accent-purple-600 border-accent-purple-600;
+    @apply shadow-glow-purple-lg;
+  }
+
+  &:active {
+    @apply scale-95;
   }
 }
 
-@media (min-width: 768px) {
-  .contact-form {
-    padding: 3rem;
-  }
+// Footer Bottom
+.footer-bottom {
+  @apply mt-16 pt-8;
+  @apply border-t border-border-light;
+  @apply text-center;
 }
 
-// Estilos específicos para o formulário de contato
-.aboutMe {
-  background-color: var(--background-color);
-  padding: 3rem 2rem;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-
-  .card-body {
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  form {
-    .form-control {
-      background-color: var(--background-color);
-      border: 1px solid #4a4a4a;
-      border-radius: 8px;
-      color: var(--main-heading);
-      font-family: Poppins;
-      font-size: 16px;
-      font-weight: 300;
-      letter-spacing: 1.1px;
-      padding: 16px 20px;
-      transition: all 0.3s ease;
-      margin-bottom: 1.5rem;
-
-      &::placeholder {
-        color: var(--sub-heading);
-        font-family: Poppins;
-        font-size: 16px;
-        font-weight: 300;
-        letter-spacing: 1.1px;
-      }
-
-      &:focus {
-        outline: none;
-        border-color: #8247E5;
-        background-color: var(--background-color);
-      }
-
-      &:hover {
-        border-color: #8247E5;
-      }
-    }
-
-    .form-control-lg {
-      font-size: 18px;
-      padding: 18px 22px;
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 140px;
-      line-height: 1.6;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      margin-top: 1.5rem;
-      font-family: Poppins;
-      font-weight: 400;
-      letter-spacing: 1.1px;
-      font-size: 14px;
-      padding: 16px 32px;
-      background-color: #8247E5;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #6a3bc7;
-        transform: translateY(-2px);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
-  }
-}
-
-// Estilos para os ícones sociais
-.d-flex.justify-content-center {
-  margin-bottom: 2rem;
-
-  .social-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    transition: transform 0.3s ease;
-    margin: 0 0.5rem;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
-
-// Responsividade para o formulário
-@media only screen and (max-width: 768px) {
-  .aboutMe {
-    padding: 2rem 1rem;
-    margin: 0;
-
-    .card-body {
-      max-width: 100%;
-    }
-
-    form {
-      .form-control {
-        font-size: 16px;
-        padding: 14px 18px;
-      }
-
-      .form-control-lg {
-        font-size: 16px;
-        padding: 14px 18px;
-      }
-
-      button[type="submit"] {
-        font-size: 14px;
-        padding: 14px 28px;
-      }
-    }
-  }
-
-  .d-flex.justify-content-center {
-    margin-bottom: 2rem;
-
-    .social-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-  }
+.copyright {
+  @apply text-text-secondary text-sm;
+  @apply font-sans;
 }

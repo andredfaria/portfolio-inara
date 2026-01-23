@@ -1,18 +1,20 @@
 // Homepage.js
 import React, { Fragment, useCallback, useEffect } from "react";
+import { motion } from "framer-motion";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import AboutMe from "./AboutMe";
 import "./Home.scss";
 import Introduction from "./Introduction";
 
-const Homepage = (props) => {
+const Homepage = () => {
   const videos = [
-    { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o" },
-    { id: "1", url: "https://www.youtube.com/embed/FP4RJy8vsGI" },
-    { id: "2", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
-    { id: "3", url: "https://www.youtube.com/embed/-GsURKTB3Ok" },
-    { id: "4", url: "https://www.youtube.com/embed/DEp5_WmpfvU" },
+    { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o", title: "Reportagem 1" },
+    { id: "1", url: "https://www.youtube.com/embed/FP4RJy8vsGI", title: "Reportagem 2" },
+    { id: "2", url: "https://www.youtube.com/embed/U5jtO-JEELw", title: "Reportagem 3" },
+    { id: "3", url: "https://www.youtube.com/embed/-GsURKTB3Ok", title: "Reportagem 4" },
+    { id: "4", url: "https://www.youtube.com/embed/DEp5_WmpfvU", title: "Reportagem 5" },
   ];
 
   const handleNext = useCallback(() => {
@@ -36,20 +38,38 @@ const Homepage = (props) => {
       <Header />
       <Introduction />
       <AboutMe />
-      <section id="intro" className="intro container section-spacing">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <div className="section-heading">
-                <h4 className="about-me-heading">Destaques</h4>
-              </div>
 
+      {/* Video Highlights Section */}
+      <section id="highlights" className="highlights-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h4 className="font-serif text-3xl md:text-4xl font-semibold text-text-primary mb-4">
+                Destaques
+              </h4>
+              <div className="h-0.5 w-20 bg-accent-purple-500 mx-auto"></div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="video-carousel-wrapper"
+            >
               <div
                 id="video-carrusel-inara"
-                className="carousel slide shadow-lg rounded overflow-hidden video-carousel"
+                className="carousel slide"
                 data-bs-ride="carousel"
               >
-                <div className="carousel-indicators">
+                {/* Indicators */}
+                <div className="carousel-indicators custom-indicators">
                   {videos.map((_, index) => (
                     <button
                       key={index}
@@ -63,18 +83,17 @@ const Homepage = (props) => {
                   ))}
                 </div>
 
-                <div className="carousel-inner h-100">
+                {/* Carousel Items */}
+                <div className="carousel-inner rounded-xl overflow-hidden border border-border-light shadow-glass">
                   {videos.map((video, index) => (
                     <div
                       key={video.id}
-                      className={`carousel-item h-100 ${
-                        index === 0 ? "active" : ""
-                      }`}
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
                     >
                       <div className="video-wrapper">
                         <iframe
                           src={video.url}
-                          title={`Vídeo ${index + 1}`}
+                          title={video.title || `Vídeo ${index + 1}`}
                           allowFullScreen
                           className="video-frame"
                           loading="lazy"
@@ -84,37 +103,33 @@ const Homepage = (props) => {
                   ))}
                 </div>
 
+                {/* Custom Controls */}
                 <button
-                  className="carousel-control-prev"
+                  className="carousel-control carousel-control-prev"
                   type="button"
                   onClick={handlePrev}
-                  data-bs-target="#video-carrusel-inara"
-                  data-bs-slide="prev"
+                  aria-label="Anterior"
                 >
-                  <span
-                    className="carousel-control-prev-icon p-3 bg-dark bg-opacity-50"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Anterior</span>
+                  <div className="control-button">
+                    <IconChevronLeft className="w-6 h-6" />
+                  </div>
                 </button>
                 <button
-                  className="carousel-control-next"
+                  className="carousel-control carousel-control-next"
                   type="button"
                   onClick={handleNext}
-                  data-bs-target="#video-carrusel-inara"
-                  data-bs-slide="next"
+                  aria-label="Próximo"
                 >
-                  <span
-                    className="carousel-control-next-icon p-3 bg-dark bg-opacity-50"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Próximo</span>
+                  <div className="control-button">
+                    <IconChevronRight className="w-6 h-6" />
+                  </div>
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
+
       <Footer />
     </Fragment>
   );

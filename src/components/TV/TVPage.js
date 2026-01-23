@@ -1,182 +1,188 @@
-import React, { Fragment, useCallback, useEffect } from "react";
-import dotsSquare from "../../assets/images/dots-square.png";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { IconChevronLeft, IconChevronRight, IconPlayerPlay, IconBrandInstagram } from "@tabler/icons-react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./_TV.scss";
-import InstagramPost from "./InstagramEmbed";
 
 const TV = () => {
-  const posts = [
-      {
-      id: "1",
-      url: "DKAbF-KxEMg",
-    },
-    {
-      id: "2",
-      url: "DGqOCg2utBS",
-    },
-    {
-      id: "3",
-      url: "C_qJl8CJpuQ",
-    },
-    {
-      id: "4",
-      url: "C_8sXEvpvtl",
-    },
-    {
-      id: "5",
-      url: "DAMlUDtpTTe",
-    },
-    {
-      id: "6",
-      url: "DAeA5n0pDDk",
-    },
-    {
-      id: "7",
-      url: "DAvraUWpo5d",
-    },
-    {
-      id: "8",
-      url: "DBB-0VFpJRp",
-    },
+  const [activeCategory, setActiveCategory] = useState(0);
+
+  const reportagens = [
+    { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o", title: "Reportagem Destaque", featured: true },
+    { id: "1", url: "https://www.youtube.com/embed/FP4RJy8vsGI", title: "Reportagem 2" },
+    { id: "2", url: "https://www.youtube.com/embed/LBNR7DL4C8M", title: "Reportagem 3" },
+    { id: "3", url: "https://www.youtube.com/embed/t_AcyevhHD4", title: "Reportagem 4" },
+    { id: "4", url: "https://www.youtube.com/embed/vleqBdvoHzI", title: "Reportagem 5" },
+    { id: "5", url: "https://www.youtube.com/embed/V5nXqtE9lOY", title: "Reportagem 6" },
+    { id: "6", url: "https://www.youtube.com/embed/P_BhUbcYYno", title: "Reportagem 7" },
   ];
 
-  const videos = [
-    {
-      title: "Reportagens",
-      videos: [
-        { id: "0", url: "https://www.youtube.com/embed/XOiIUgW5-_o" },
-        { id: "1", url: "https://www.youtube.com/embed/FP4RJy8vsGI" },  
-        { id: "2", url: "https://www.youtube.com/embed/LBNR7DL4C8M" },
-        { id: "3", url: "https://www.youtube.com/embed/t_AcyevhHD4" },
-        { id: "4", url: "https://www.youtube.com/embed/vleqBdvoHzI" },
-        { id: "5", url: "https://www.youtube.com/embed/V5nXqtE9lOY" },
-        { id: "6", url: "https://www.youtube.com/embed/P_BhUbcYYno" },
-      ],
-    },
-    {
-      title: "TV e Radio",
-      videos: [
-        { id: "6", url: "https://www.youtube.com/embed/F2MriBvGAvo" },
-        { id: "7", url: "https://www.youtube.com/embed/U5jtO-JEELw" },
-        { id: "8", url: "https://www.youtube.com/embed/pacSJMHakMo" },
-      ],
-    },
+  const tvRadio = [
+    { id: "7", url: "https://www.youtube.com/embed/F2MriBvGAvo", title: "TV e Rádio 1" },
+    { id: "8", url: "https://www.youtube.com/embed/U5jtO-JEELw", title: "TV e Rádio 2" },
+    { id: "9", url: "https://www.youtube.com/embed/pacSJMHakMo", title: "TV e Rádio 3" },
   ];
 
-  const getCategoryId = (title) => title?.toLowerCase().replace(/\s+/g, "-");
-
-  const handleNext = useCallback((category) => {
-    if (typeof window !== "undefined" && window.jQuery) {
-      window
-        .jQuery(`#video-carrusel-${getCategoryId(category)}`)
-        .carousel("next");
-    }
-  }, []);
-
-  const handlePrev = useCallback((category) => {
-    if (typeof window !== "undefined" && window.jQuery) {
-      window
-        .jQuery(`#video-carrusel-${getCategoryId(category)}`)
-        .carousel("prev");
-    }
-  }, []);
+  const instagramPosts = [
+    { id: "1", url: "DKAbF-KxEMg" },
+    { id: "2", url: "DGqOCg2utBS" },
+    { id: "3", url: "C_qJl8CJpuQ" },
+    { id: "4", url: "C_8sXEvpvtl" },
+    { id: "5", url: "DAMlUDtpTTe" },
+    { id: "6", url: "DAeA5n0pDDk" },
+    { id: "7", url: "DAvraUWpo5d" },
+    { id: "8", url: "DBB-0VFpJRp" },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const InstagramPosts = () => (
-    <section className="instagram-posts container section-spacing">
-      <div className="section-heading">
-        <h4 className="about-me-heading">Posts do Instagram</h4>
-      </div>
-      <div className="row g-4 justify-content-center">
-        {posts.map((post) => (
-          <InstagramPost post={post} key={post.id} />
-        ))}
-      </div>
-    </section>
-  );
+  const VideoCard = ({ video, featured = false }) => {
+    const [isHovered, setIsHovered] = useState(false);
 
-  const VideoCarousel = ({ category }) => (
-    <div
-      id={`video-carrusel-${getCategoryId(category.title)}`}
-      className="carousel slide video-carousel shadow-lg rounded overflow-hidden"
-      data-bs-ride="carousel"
-    >
-      <h3 className="video-category-title">{category.title}</h3>
-      <div className="carousel-inner h-100">
-        {category.videos.map((video, index) => (
-          <div
-            key={video.id}
-            className={`carousel-item h-100 ${index === 0 ? "active" : ""}`}
+    return (
+      <motion.div
+        className={`video-card ${featured ? "video-card-featured" : ""}`}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="video-card-inner">
+          <iframe
+            src={video.url}
+            title={video.title}
+            allowFullScreen
+            className="video-iframe"
+            loading="lazy"
+          ></iframe>
+          <motion.div
+            className="video-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="video-wrapper">
-              <iframe
-                src={video.url}
-                title={`Vídeo ${index + 1}`}
-                allowFullScreen
-                className="video-frame"
-                loading="lazy"
-              ></iframe>
-            </div>
+            <IconPlayerPlay className="w-16 h-16 text-white" />
+            {video.title && (
+              <h4 className="video-title">{video.title}</h4>
+            )}
+          </motion.div>
+        </div>
+      </motion.div>
+    );
+  };
+
+  const InstagramCard = ({ post }) => {
+    return (
+      <motion.a
+        href={`https://www.instagram.com/p/${post.url}/`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="instagram-card group"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ y: -4 }}
+      >
+        <div className="instagram-card-inner">
+          <div className="instagram-embed-preview">
+            <iframe
+              src={`https://www.instagram.com/p/${post.url}/embed`}
+              className="instagram-iframe"
+              loading="lazy"
+              title={`Instagram post ${post.id}`}
+            ></iframe>
           </div>
-        ))}
-      </div>
-      <button
-        className="carousel-control-prev"
-        type="button"
-        onClick={() => handlePrev(category.title)}
-      >
-        <span
-          className="carousel-control-prev-icon p-3 bg-dark bg-opacity-50"
-          aria-hidden="true"
-        ></span>
-        <span className="visually-hidden">Anterior</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        onClick={() => handleNext(category.title)}
-      >
-        <span
-          className="carousel-control-next-icon p-3 bg-dark bg-opacity-50"
-          aria-hidden="true"
-        ></span>
-        <span className="visually-hidden">Próximo</span>
-      </button>
-    </div>
-  );
+          <div className="instagram-overlay">
+            <IconBrandInstagram className="w-8 h-8" />
+          </div>
+        </div>
+      </motion.a>
+    );
+  };
 
   return (
     <Fragment>
       <Header />
-      {videos.map((category) => (
-        <section
-          key={category.title}
-          id={getCategoryId(category.title)}
-          className="intro container section-spacing position-relative"
-        >
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <div className="section-heading text-center">
-                <h4 className="about-me-heading">{category.title}</h4>
-              </div>
-              <VideoCarousel category={category} />
-            </div>
+
+      {/* Reportagens Section - Bento Grid */}
+      <section className="portfolio-section">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h4 className="font-serif text-4xl md:text-5xl font-semibold text-text-primary mb-4">
+              Reportagens
+            </h4>
+            <div className="h-0.5 w-20 bg-accent-purple-500 mx-auto"></div>
+          </motion.div>
+
+          {/* Bento Grid */}
+          <div className="bento-grid">
+            {reportagens.map((video) => (
+              <VideoCard key={video.id} video={video} featured={video.featured} />
+            ))}
           </div>
-          {["Reportagens", "TV e Radio"].includes(category.title) && (
-            <img
-              className="square-dots dots-img d-none d-lg-block"
-              src={dotsSquare}
-              alt="dots-sq"
-              style={{ position: 'absolute', right: 0, bottom: '10%' }}
-            />
-          )}
-        </section>
-      ))}
-      <InstagramPosts />
+        </div>
+      </section>
+
+      {/* TV e Rádio Section */}
+      <section className="portfolio-section bg-gradient-to-b from-background-light to-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h4 className="font-serif text-4xl md:text-5xl font-semibold text-text-primary mb-4">
+              TV e Rádio
+            </h4>
+            <div className="h-0.5 w-20 bg-accent-purple-500 mx-auto"></div>
+          </motion.div>
+
+          <div className="video-grid">
+            {tvRadio.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram Posts Section */}
+      <section className="portfolio-section">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h4 className="font-serif text-4xl md:text-5xl font-semibold text-text-primary mb-4">
+              Posts do Instagram
+            </h4>
+            <div className="h-0.5 w-20 bg-accent-purple-500 mx-auto"></div>
+          </motion.div>
+
+          <div className="instagram-grid">
+            {instagramPosts.map((post) => (
+              <InstagramCard key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </Fragment>
   );

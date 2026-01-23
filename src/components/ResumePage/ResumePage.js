@@ -1,469 +1,330 @@
 import React, { Fragment, useEffect } from "react";
-import art from "../../assets/images/art.png";
-import calender from "../../assets/images/calender.png";
-import download from "../../assets/images/download.png";
+import { motion } from "framer-motion";
+import {
+  IconMail,
+  IconMapPin,
+  IconBriefcase,
+  IconPhone,
+  IconBrandLinkedin,
+  IconBrandInstagram,
+  IconDownload,
+  IconSchool,
+  IconCalendar
+} from "@tabler/icons-react";
 import profile from "../../assets/images/inara-angra-apresentadora.jpeg";
-import inbox from "../../assets/images/inbox.png";
-import instagram from "../../assets/images/instagram.png";
-import linkedin from "../../assets/images/linkedin.png";
-import location from "../../assets/images/location.png";
-import ellipse from "../../assets/images/resume-ellipse.png";
-import school from "../../assets/images/school.png";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./_resume.scss";
 
-const ResumePage = props => {
+const ResumePage = () => {
   useEffect(() => {
-    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
   }, []);
+
+  const experiences = [
+    {
+      company: "Rede Mais / Record",
+      link: "https://redemais.tv.br/",
+      role: "Produtora Multimídia",
+      location: "Varginha, MG",
+      period: "Julho, 2025 - Até o momento",
+      type: "Presencial"
+    },
+    {
+      company: "BAND FM - Poços de Caldas",
+      link: "https://www.bandfmpocos.com.br/",
+      role: "Produtora e Apresentadora do Manhã Show e Happy Hour",
+      location: "Poços de Caldas, MG",
+      period: "Janeiro, 2025 - Julho, 2025",
+      type: "Presencial"
+    },
+    {
+      company: "TV Plan",
+      link: "https://tvplan.com.br/",
+      role: "Repórter, produtora, gestora de mídias",
+      location: "Poços de Caldas, MG",
+      period: "Julho, 2023 - Julho, 2025",
+      type: "Presencial"
+    },
+    {
+      company: "INB - Indústrias Nucleares do Brasil",
+      link: "https://www.inb.gov.br/",
+      role: "Estágio em Publicidade e Propaganda",
+      location: "Caldas, MG",
+      period: "2022 - 2023",
+      type: "Presencial"
+    },
+    {
+      company: "Grupo MDM Network & Elity Digital",
+      link: "https://www.linkedin.com/company/elity-mdm",
+      role: "Copywriter",
+      location: "Poços de Caldas, MG",
+      period: "Janeiro, 2023 - Março, 2023",
+      type: "Híbrido"
+    },
+    {
+      company: "TV Plan",
+      link: "https://tvplan.com.br/",
+      role: "Estágio em Publicidade e Propaganda",
+      location: "Poços de Caldas, MG",
+      period: "Janeiro, 2023",
+      type: "Presencial"
+    },
+    {
+      company: "INB - Indústrias Nucleares do Brasil",
+      link: "https://www.inb.gov.br/",
+      role: "Estágio em Jornalismo",
+      location: "Caldas, MG",
+      period: "Novembro, 2021 - Dezembro, 2022",
+      type: "Presencial"
+    },
+    {
+      company: "EPTV Sul de Minas",
+      link: "https://institucional.eptv.com.br/televisao/cobertura/suldeminas.aspx",
+      role: "Estágio em Jornalismo",
+      location: "Poços de Caldas, MG",
+      period: "Janeiro, 2021 - Outubro, 2021",
+      type: "Remoto"
+    },
+    {
+      company: "TV Poços",
+      link: "https://tvpocos.com.br/",
+      role: "Estagio em Jornalismo e Reporter",
+      location: "Poços de Caldas, MG",
+      period: "Setembro, 2020 - Dezembro, 2020",
+      type: "Presencial"
+    },
+    {
+      company: "DMAE - Departamento Municipal de Água e Esgoto de Poços de Caldas",
+      link: "http://dmaepc.mg.gov.br/",
+      role: "Estagio em Jornalismo",
+      location: "Poços de Caldas, MG",
+      period: "Fevereiro, 2020 - Dezembro, 2020",
+      type: "Presencial"
+    }
+  ];
+
+  const getBadgeClass = (type) => {
+    switch (type) {
+      case "Presencial":
+        return "badge-presencial";
+      case "Híbrido":
+        return "badge-hibrido";
+      case "Remoto":
+        return "badge-remoto";
+      default:
+        return "badge-presencial";
+    }
+  };
+
   return (
     <Fragment>
       <Header />
-      <div className="container resume">
-        <div className="middle">
-          <div className="resume-main">
-            <div className="row">
-              <div className="col-12 col-lg-5 resume-col">
-                <div className="user-personal-info">
-                  <div className="profile-image-div">
+      <div className="resume-page">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+            {/* Left Column - Sticky Sidebar */}
+            <motion.aside
+              className="lg:col-span-4 space-y-8"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="sticky top-24 space-y-8">
+                {/* Profile Card */}
+                <div className="profile-card">
+                  <div className="profile-image-container">
                     <img
-                      className="img-fluid"
+                      className="profile-image"
                       src={profile}
                       alt="Perfil de Inara Angra"
                     />
                   </div>
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200 profile-name">
-                    Inara Angra
-                  </h5>
-                  <p>Jornalista</p>
-                  <ul className="resume-list">
-                    <li>
-                      <img src={inbox} alt="Email" />
-                      <a href="mailto:inaraangra@hotmail.com">
-                        inaraangra@hotmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <img src={location} alt="Localização" />
-                      Varginha, Minas Gerais, Brasil
-                    </li>
-                    <li>
-                      <img src={art} alt="Website" />
-                      <a
-                        href="https://redemais.tv.br/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Rede Mais | Record
-                      </a>{" "}
-                    </li>
-                    <li>
-                      <img src={inbox} alt="Telefone" />
-                      <a href="https://wa.me/5535998084624/">
-                        (35) 9 9808-4624
-                      </a>
-                    </li>
-                  </ul>
+                  <h2 className="profile-name">Inara Angra</h2>
+                  <p className="profile-title">Jornalista</p>
+
+                  {/* Contact Info */}
+                  <div className="contact-list">
+                    <a href="mailto:inaraangra@hotmail.com" className="contact-item">
+                      <IconMail className="w-4 h-4" />
+                      <span>inaraangra@hotmail.com</span>
+                    </a>
+                    <div className="contact-item">
+                      <IconMapPin className="w-4 h-4" />
+                      <span>Varginha, Minas Gerais, Brasil</span>
+                    </div>
+                    <a
+                      href="https://redemais.tv.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-item"
+                    >
+                      <IconBriefcase className="w-4 h-4" />
+                      <span>Rede Mais | Record</span>
+                    </a>
+                    <a href="https://wa.me/5535998084624/" className="contact-item">
+                      <IconPhone className="w-4 h-4" />
+                      <span>(35) 9 9808-4624</span>
+                    </a>
+                  </div>
                 </div>
 
-                <div className="education d-none d-lg-block">
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
-                    Formação
-                  </h5>
-                  <div className="education-item">
-                    <p>
+                {/* Education */}
+                <div className="section-card">
+                  <h3 className="section-title">Formação</h3>
+                  <div className="space-y-6">
+                    <div className="education-item">
                       <a
                         href="https://unifae.edu.br/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="education-institution"
                       >
                         UNIFAE
                       </a>
-                    </p>
-                    <div className="eduAndSchool">
-                      <img src={school} alt="Curso" />
-                      Comunicação Social com ênfase em Jornalismo
+                      <div className="education-detail">
+                        <IconSchool className="w-4 h-4" />
+                        <span>Comunicação Social com ênfase em Jornalismo</span>
+                      </div>
+                      <div className="education-detail">
+                        <IconCalendar className="w-4 h-4" />
+                        <span>Janeiro, 2019 - Dezembro, 2022</span>
+                      </div>
                     </div>
-                    <div className="eduAndSchool">
-                      <img src={calender} alt="Data" />
-                      Janeiro, 2019 - Dezembro, 2022
-                    </div>
-                  </div>
-                  <div className="education-item">
-                    <p>
+
+                    <div className="education-item">
                       <a
                         href="https://www.unicesumar.edu.br/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="education-institution"
                       >
                         UNICESUMAR
                       </a>
-                    </p>
-                    <div className="eduAndSchool">
-                      <img src={school} alt="Curso" />
-                      Comunicação Social com ênfase em Publicidade e Propaganda
-                    </div>
-                    <div className="eduAndSchool">
-                      <img src={calender} alt="Data" />
-                      Janeiro, 2023 - Até o momento
+                      <div className="education-detail">
+                        <IconSchool className="w-4 h-4" />
+                        <span>Comunicação Social com ênfase em Publicidade e Propaganda</span>
+                      </div>
+                      <div className="education-detail">
+                        <IconCalendar className="w-4 h-4" />
+                        <span>Janeiro, 2023 - Até o momento</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
-                    Social
-                  </h5>
-                  <ul className="resume-list social-links">
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/inaraangra/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={linkedin} alt="LinkedIn" />
-                        <span>Inara Angra</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/inaraangra/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={instagram} alt="Instagram" />
-                        <span>@inaraangra</span>
-                      </a>
-                    </li>
-                  </ul>
+                {/* Social */}
+                <div className="section-card">
+                  <h3 className="section-title">Social</h3>
+                  <div className="social-links">
+                    <a
+                      href="https://www.linkedin.com/in/inaraangra/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-link"
+                    >
+                      <IconBrandLinkedin className="w-5 h-5" />
+                      <span>Inara Angra</span>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/inaraangra/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-link"
+                    >
+                      <IconBrandInstagram className="w-5 h-5" />
+                      <span>@inaraangra</span>
+                    </a>
+                  </div>
                 </div>
 
-                <div className="social d-none d-lg-block">
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
-                    Curriculo
-                  </h5>
-                  <ul className="resume-list social-links">
-                    <li>
-                      <a
-                        href="https://inaraangra.com.br/InaraAngra-Jornalista.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="portfolio-btn primary-btn"
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "10px",
-                          padding: "12px 28px",
-                          backgroundColor: "#8247E5",
-                          color: "white",
-                          textDecoration: "none",
-                          borderRadius: "5px",
-                          fontWeight: "400",
-                          fontSize: "12px",
-                          letterSpacing: "1.1px",
-                          transition: "all 0.3s ease",
-                          boxShadow: "0 4px 15px rgba(130, 71, 229, 0.3)",
-                          border: "none",
-                          outline: "none",
-                          cursor: "pointer",
-                          fontFamily: "Poppins"
-                        }}
-                        onMouseOver={(e) => {
-                          e.target.style.backgroundColor = "#6a3bc7";
-                          e.target.style.transform = "translateY(-2px)";
-                          e.target.style.boxShadow = "0 6px 20px rgba(130, 71, 229, 0.4)";
-                        }}
-                        onMouseOut={(e) => {
-                          e.target.style.backgroundColor = "#8247E5";
-                          e.target.style.transform = "translateY(0)";
-                          e.target.style.boxShadow = "0 4px 15px rgba(130, 71, 229, 0.3)";
-                        }}
-                      >
-                        <img 
-                          src={download} 
-                          alt="Download CV" 
-                          style={{ filter: "brightness(0) invert(1)" }}
-                        />
-                        Download PDF
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <img
-                  className="left-bottom-img d-none d-lg-block"
-                  src={ellipse}
-                  alt="Imagem decorativa"
-                />
+                {/* Download CV CTA */}
+                <motion.a
+                  href="https://inaraangra.com.br/InaraAngra-Jornalista.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="download-cv-button group"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <IconDownload className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
+                  <span>Download PDF</span>
+                </motion.a>
               </div>
+            </motion.aside>
 
-              <div className="col-12 col-lg-7 resume-col">
-                <div className="summary">
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
-                    Resumo Profissional
-                  </h5>
-                  <p className="summary-text">
-                    Atualmente, atuo como Produtora Multimídia na Rede Mais | Record TV, em Varginha (MG), fazendo entradas ao vivo, reportagens e produção. <br />
-                    Tenho experiência nas áreas de televisão e rádio, com passagem pelo Grupo Cioffi de Comunicação. No grupo, fui apresentadora dos programas “Manhã Show” e “Happy Hour”, na Band FM de Poços de Caldas. Já na TV Plan, afiliada da TV Brasil, atuei em várias funções, como: repórter, apresentadora, produtora, gestora de redes sociais e, em alguns períodos, como diretora de jornalismo. <br />
+            {/* Right Column - Experience Timeline */}
+            <motion.main
+              className="lg:col-span-8 space-y-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              {/* Professional Summary */}
+              <div className="summary-card">
+                <h3 className="section-title">Resumo Profissional</h3>
+                <div className="summary-text space-y-4">
+                  <p>
+                    Atualmente, atuo como Produtora Multimídia na Rede Mais | Record TV, em Varginha (MG), fazendo entradas ao vivo, reportagens e produção.
+                  </p>
+                  <p>
+                    Tenho experiência nas áreas de televisão e rádio, com passagem pelo Grupo Cioffi de Comunicação. No grupo, fui apresentadora dos programas "Manhã Show" e "Happy Hour", na Band FM de Poços de Caldas. Já na TV Plan, afiliada da TV Brasil, atuei em várias funções, como: repórter, apresentadora, produtora, gestora de redes sociais e, em alguns períodos, como diretora de jornalismo.
+                  </p>
+                  <p>
                     Também acumulo experiências anteriores em estágios nas áreas de TV e assessoria de comunicação.
                   </p>
                 </div>
-                <div className="work-experience-section">
-                  <h5 className="resume-heading text-gray-800 dark:text-gray-200">
-                    Experiências profissionais
-                  </h5>
+              </div>
 
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://redemais.tv.br/">
-                          Rede Mais / Record
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Produtora Multimídia
+              {/* Experience Timeline */}
+              <div className="timeline-section">
+                <h3 className="section-title mb-8">Experiências Profissionais</h3>
+                <div className="timeline-container">
+                  {experiences.map((exp, index) => (
+                    <motion.div
+                      key={index}
+                      className="timeline-item"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <div className="timeline-marker" />
+                      <div className="timeline-content">
+                        <div className="experience-header">
+                          <a
+                            href={exp.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="experience-company"
+                          >
+                            {exp.company}
+                          </a>
+                          <span className={`experience-badge ${getBadgeClass(exp.type)}`}>
+                            {exp.type}
+                          </span>
+                        </div>
+                        <h4 className="experience-role">{exp.role}</h4>
+                        <div className="experience-meta">
+                          <div className="experience-meta-item">
+                            <IconMapPin className="w-4 h-4" />
+                            <span>{exp.location}</span>
+                          </div>
+                          <div className="experience-meta-item">
+                            <IconCalendar className="w-4 h-4" />
+                            <span>{exp.period}</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Varginha, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Julho, 2025 - Até o momento
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://www.bandfmpocos.com.br/">
-                          BAND FM - Poços de Caldas
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Produtora e Apresentadora do Manhã Show e Happy Hour
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Janeiro, 2025 - Julho, 2025
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://tvplan.com.br/">TV Plan</a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Repórter, produtora, gestora de mídias
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Julho, 2023 - Julho, 2025
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://www.inb.gov.br/">
-                          INB - Indústrias Nucleares do Brasil
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estágio em Publicidade e Propaganda
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        2022 - 2023
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://www.linkedin.com/company/elity-mdm">
-                          Grupo MDM Network & Elity Digital
-                        </a>
-                      </span>
-                      <span className="remote">Híbrido</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Copywriter
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Janeiro, 2023 - Março, 2023
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://tvplan.com.br/">TV Plan</a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estágio em Publicidade e Propaganda
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Janeiro, 2023
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://www.inb.gov.br/">
-                          INB - Indústrias Nucleares do Brasil
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estágio em Jornalismo
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Novembro, 2021 - Dezembro, 2022
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://institucional.eptv.com.br/televisao/cobertura/suldeminas.aspx">
-                          EPTV Sul de Minas
-                        </a>
-                      </span>
-                      <span className="remote">Remoto</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estágio em Jornalismo
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Janeiro, 2021 - Outubro, 2021
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="https://tvpocos.com.br/">TV Poços</a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estagio em Jornalismo e Reporter
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Setembro, 2020 - Dezembro, 2020
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="experience">
-                    <div className="experience-title">
-                      <span className="experience-text">
-                        <a href="http://dmaepc.mg.gov.br/">
-                          DMAE - Departamento Municipal de Água e Esgoto de
-                          Poços de Caldas
-                        </a>
-                      </span>
-                      <span className="remote">Presencial</span>
-                    </div>
-                    <div className="experience-detail">
-                      <div className="experience-detail-item">
-                        <img src={school} alt="" />
-                        Estagio em Jornalismo
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={location} alt="" />
-                        Poços de Caldas, MG
-                      </div>
-                      <div className="experience-detail-item">
-                        <img src={calender} alt="" />
-                        Fevereiro, 2020 - Dezembro, 2020
-                      </div>
-                    </div>
-                  </div>
-
-                  <center>"Só quem sonha consegue alcançar"</center>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="timeline-quote">
+                  "Só quem sonha consegue alcançar"
                 </div>
               </div>
-            </div>
+            </motion.main>
           </div>
         </div>
       </div>
@@ -471,4 +332,5 @@ const ResumePage = props => {
     </Fragment>
   );
 };
+
 export default ResumePage;
