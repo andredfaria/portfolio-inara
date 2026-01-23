@@ -9,9 +9,10 @@ Esta regra garante que NENHUM código desenvolvido quebre o deploy na Vercel. Qu
 **Configuração Atual da Vercel:**
 - Build Command: `npm run vercel-build`
 - Output Directory: `build/`
-- Framework: `create-react-app`
-- Node.js: `>=20.0.0` (especificado em `.nvmrc` e `package.json`)
-- Flag Crítica: `--legacy-peer-deps` (OBRIGATÓRIO no build)
+- Framework: `vite`
+- Node.js: `>=24.0.0` (especificado em `.nvmrc` e `package.json`)
+- React: `19.0.0`
+- Build Tool: `Vite 6.x`
 
 ---
 
@@ -22,33 +23,32 @@ Esta regra garante que NENHUM código desenvolvido quebre o deploy na Vercel. Qu
 **OBRIGATÓRIO:** Antes de modificar `package.json`, verificar:
 
 - [ ] O script `vercel-build` existe e está correto
-- [ ] O script `vercel-build` inclui `--legacy-peer-deps`
-- [ ] O script `vercel-build` executa `react-scripts build`
+- [ ] O script `vercel-build` executa `vite build`
 - [ ] NÃO remover ou modificar o script `vercel-build` sem aprovação explícita
 
 **Formato Esperado:**
 ```json
-"vercel-build": "npm install --legacy-peer-deps && react-scripts build"
+"vercel-build": "vite build"
 ```
 
-**BLOQUEIO ABSOLUTO:** Se você modificar este script e remover `--legacy-peer-deps`, o deploy IRÁ FALHAR.
+**NOTA:** Com Vite, não é mais necessário usar `--legacy-peer-deps`. O Vite gerencia dependências de forma mais eficiente.
 
 ### 1.2 Verificação de Node.js Version
 
 **OBRIGATÓRIO:** Verificar compatibilidade de versão:
 
-- [ ] `.nvmrc` especifica Node 20 (ou versão compatível >=20.0.0)
-- [ ] `package.json` tem `"engines": { "node": ">=20.0.0" }`
+- [ ] `.nvmrc` especifica Node 24 (ou versão compatível >=24.0.0)
+- [ ] `package.json` tem `"engines": { "node": ">=24.0.0" }`
 - [ ] NÃO usar features do Node.js que requerem versão superior sem atualizar ambos os arquivos
 
 ### 1.3 Verificação de Dependências
 
 **OBRIGATÓRIO:** Antes de adicionar/modificar dependências:
 
-- [ ] Verificar se a dependência é compatível com React 18.3.1
+- [ ] Verificar se a dependência é compatível com React 19.0.0
 - [ ] Verificar se a dependência não conflita com dependências existentes
-- [ ] Se houver conflito de peer dependencies, garantir que `--legacy-peer-deps` resolve
-- [ ] Testar instalação local antes de commitar: `npm install --legacy-peer-deps`
+- [ ] Verificar compatibilidade com Vite 6.x
+- [ ] Testar instalação local antes de commitar: `npm install`
 
 **BLOQUEIO:** Não adicionar dependências que quebrem o build sem resolver conflitos primeiro.
 

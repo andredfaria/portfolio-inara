@@ -1,8 +1,8 @@
 {
   "buildCommand": "npm run vercel-build",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm install",
   "outputDirectory": "build",
-  "framework": "create-react-app",
+  "framework": "vite",
   "rewrites": [
     {
       "source": "/(.*)",
